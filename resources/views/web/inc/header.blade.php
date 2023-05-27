@@ -19,10 +19,7 @@
                             </div>
                         </li>
       
-                        <li>
-                            <div id="side-panel-trigger" class="side-panel-trigger"><a href="#"><i
-                                        class="fa fa-bars font-24"></i></a></div>
-                        </li>
+                      
                     </ul>
                     <ul class="menuzord-menu onepage-nav ">
                         <li class="active"><a href="#home">Home</a></li>

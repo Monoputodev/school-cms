@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\UserController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContentController;
+use App\Http\Controllers\CoursesController;
 use App\Http\Controllers\HeroController;
 use App\Http\Controllers\NoticeController;
 use App\Http\Controllers\PackageQuerryController;
@@ -47,7 +48,17 @@ Route::prefix('/dashboard')->middleware('auth')->group(function () {
         Route::get('/active/{notice}', [NoticeController::class, 'active'])->name('notices.active');
         Route::get('/inactive/{notice}', [NoticeController::class, 'inactive'])->name('notices.inactive');
     });
-
+    Route::prefix('courses')->group(function () {
+        // Courses-Routes
+        Route::get('/', [CoursesController::class, 'index'])->name('courses.index');
+        Route::get('/create', [CoursesController::class, 'create'])->name('courses.create');
+        Route::post('/', [CoursesController::class, 'store'])->name('courses.store');
+        Route::get('/{course}', [CoursesController::class, 'show'])->name('courses.show');
+        Route::get('/{course}/edit', [CoursesController::class, 'edit'])->name('courses.edit');
+        Route::put('/{course}', [CoursesController::class, 'update'])->name('courses.update');
+        Route::get('/{course}', [CoursesController::class, 'destroy'])->name('courses.destroy');
+        Route::get('/active/{course}', [CoursesController::class, 'active'])->name('courses.active');
+        
 
     Route::prefix('teams')->group(function () {
         // Team-Routes

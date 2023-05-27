@@ -8876,3 +8876,6 @@ body.has-fixed-footer .main-content {
     margin-bottom: 0 !important;
   }
 }
+img.img-fluid.banner-image.mx-auto {
+    width: 100%;
+}

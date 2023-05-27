@@ -4,7 +4,7 @@
 			<div class="row">
 				<div class="col-sm-6 col-md-8">
 					<h2 class="mt-0 mt-sm-30 line-height-1 line-bottom-edu">Welcome to <span
-							class="text-theme-colored3">EduPoints</span></h2>
+							class="text-theme-colored3">{{ $content->website_name }}</span></h2>
 
 					<div class="box-hover-effect play-button">
 						<div class="effect-wrapper">

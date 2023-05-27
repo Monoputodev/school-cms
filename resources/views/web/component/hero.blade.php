@@ -175,10 +175,10 @@
         </div>
 
         <div class="col-md-2 col-xs-3">
-            <div class="container">
+          
                 <img src="{{ asset('/') }}assets/web/images/banner/01.png" alt=""
-                    class="img-fluid banner-image">
-            </div>
+                    class="img-fluid banner-image mx-auto">
+          
         </div>
     </div>
 

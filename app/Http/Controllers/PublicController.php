@@ -18,7 +18,7 @@ $sliders = Hero::all();
 $notices = Notice::all();
 $blogs = Blog::all();
  $teams = Team::all();
-        return view('web.app.app',compact('sliders','notices','blogs','teams'));
+        return view('web.pages.index',compact('sliders','notices','blogs','teams'));
     }
 
     public function dashboard()

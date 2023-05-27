@@ -3,23 +3,33 @@
 
 @section('main-body')
     <div class="main-body">
-        @include('web.component.hero')
+            <!-- Section: home -->
+            @include('web.component.hero')
 
-        @include('web.component.about')
-        @include('web.component.package')
-
-        @include('web.component.destination')
-        @include('web.component.blog')
-        @include('web.component.us')
-        @include('web.component.news')
-
-        @include('web.component.testimonial')
-
-        @include('web.component.team')
+            <!-- Section: About  -->
+            @include('web.component.about')
 
 
-        <!-- testimonial area start here -->
-        @include('web.component.gallery')
+
+            <!-- Section: free-registration  -->
+            @include('web.component.querry')
+            {{-- @include('web.component.testimonial') --}}
+
+
+            <!-- Section: -->
+
+
+            <!-- Section:  -->
+            @include('web.component.team')
+
+            <!-- Divider: -->
+@include('web.component.divider')
+
+            <!-- Section: blog -->
+            @include('web.component.news')
+
+            <!-- Divider: Reservation Form -->
+@include('web.component.contact-us')
 
     </div>
 @endsection
