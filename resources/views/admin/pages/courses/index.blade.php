@@ -37,33 +37,7 @@
 
 
                 <div class="row">
-                    <div class="col-xl-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <form method="POST" action="{{ route('bb.update', $content->id) }}"
-                                    enctype="multipart/form-data">
-                                    @method('PUT')
-                                    @csrf
-                                    <div class="row g-3">
 
-                                        <div class="col-md-6">
-                                            <label for="image" class="form-label">Courses Background Image</label>
-                                            <input type="file" class="form-control dropify" id="image"
-                                                name="courses_background"
-                                                data-default-file="{{ asset('uploads/content/' . $content->courses_background) }}">
-                                        </div>
-
-                                        <div class="col-md-12 mt-3">
-                                            <button type="submit" class="btn btn-primary">Submit</button>
-                                        </div>
-
-                                    </div>
-                                </form>
-
-                            </div>
-                        </div>Eweb
-                        
-                    </div>
                     <div class="col-xl-12">
                         <div class="card">
                             <div class="card-body">
@@ -76,10 +50,8 @@
                                     <thead>
                                         <tr>
                                             <th>status</th>
-                                            <th>Title</th>
-                                            <th>Sub Title</th>
+                                            <th>Name</th>
                                             <th>Description</th>
-                                            <th>Image</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -95,17 +67,9 @@
                                                             class="badge rounded-pill badge-soft-danger font-size-11">Inactive</span>
                                                     @endif
                                                 </td>
-                                                <td>{{ $courses->title }}</td>
-                                                <td>{{ $courses->subtitle }}</td>
-                                                <td>{!! $courses->description !!}</td>
-                                                <td>
-                                                    @if ($courses->image)
-                                                        <img src="{{ asset('uploads/courses/' . $courses->image) }}"
-                                                            alt="{{ $courses->title }}" width="80">
-                                                    @else
-                                                        No Image
-                                                    @endif
-                                                </td>
+                                                <td>{{ $courses->name }}</td>
+                                                <td>{{ $courses->description }}</td>
+
 
 
                                                 <td>
@@ -130,17 +94,7 @@
                                                         onclick="deleteItem({{ $courses->id }});" type="button">
                                                         <i class="fa fa-trash"></i> </button>
                                                 </td>
-                                                {{-- <td>
-                                            <a href="{{ route('courses.edit', $courses->id) }}" class="btn btn-sm
-                                        btn-warning">Edit</a>
-                                        <form action="{{ route('courses.destroy', $courses->id) }}" method="POST"
-                                          style="display: inline-block;">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-sm btn-danger"
-                                              onclick="return confirm('Are you sure you want to delete this courses?')">Delete</button>
-                                        </form>
-                                        </td> --}}
+
                                             </tr>
                                         @endforeach
                                     </tbody>

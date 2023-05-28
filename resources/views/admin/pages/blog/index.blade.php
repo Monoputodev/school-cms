@@ -37,32 +37,7 @@
 
 
                 <div class="row">
-                    <div class="col-xl-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <form method="POST" action="{{ route('bb.update', $content->id) }}"
-                                    enctype="multipart/form-data">
-                                    @method('PUT')
-                                    @csrf
-                                    <div class="row g-3">
 
-                                        <div class="col-md-6">
-                                            <label for="image" class="form-label">Blog Background Image</label>
-                                            <input type="file" class="form-control dropify" id="image"
-                                                name="blog_background"
-                                                data-default-file="{{ asset('uploads/content/' . $content->blog_background) }}">
-                                        </div>
-
-                                        <div class="col-md-12 mt-3">
-                                            <button type="submit" class="btn btn-primary">Submit</button>
-                                        </div>
-
-                                    </div>
-                                </form>
-
-                            </div>
-                        </div>
-                    </div>
                     <div class="col-xl-12">
                         <div class="card">
                             <div class="card-body">

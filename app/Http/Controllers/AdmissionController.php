@@ -7,79 +7,58 @@ use Illuminate\Http\Request;
 
 class AdmissionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        $admissions = Admission::all();
+        return view('admin.pages.admissions.index', compact('admissions'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'reservation_name' => 'required',
+            'reservation_email' => 'required|email',
+            'reservation_phone' => 'required',
+            'reservation_course' => 'required',
+            'reservation_message' => 'nullable',
+        ]);
+
+        Admission::create($request->all());
+
+        return back()->with('success', 'Request Submitted successfully.');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Admission  $admission
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Admission $admission)
-    {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Admission  $admission
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Admission $admission)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Admission  $admission
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Admission $admission)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Admission  $admission
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Admission $admission)
     {
-        //
+        $admission->delete();
+
+        return redirect()->route('admissions.index')->with('success', 'Admission deleted successfully.');
+    }
+
+    public function Active(Admission $admission)
+    {
+
+        $admission->status = '1';
+        if ($admission->save()) {
+            return redirect()->route('admission.index')->with('success', 'admission Activated successfully.');
+        } else {
+            return back()->with('error', 'admission Activation Unsuccessfull');
+        }
+    }
+
+
+    public function Inactive(Admission $admission)
+
+    {
+
+        $admission->status = '0';
+        if ($admission->save()) {
+            return redirect()->route('admission.index')->with('success', 'admission Deactivated successfully.');
+        } else {
+            return back()->with('error', 'admission Dactivation Unsuccessfull.');
+        }
     }
 }

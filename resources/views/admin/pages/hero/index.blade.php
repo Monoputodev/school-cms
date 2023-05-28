@@ -45,8 +45,7 @@
                                 <thead>
                                     <tr>
                                         <th>status</th>
-                                        <th>Title</th>
-                                        <th>Subtitle</th>
+                                        <th>SL</th>
 
                                         <th>Image</th>
                                         <th>Action</th>

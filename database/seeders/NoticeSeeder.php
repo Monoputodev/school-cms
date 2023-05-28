@@ -14,28 +14,29 @@ class NoticeSeeder extends Seeder
      */
     public function run()
     {
-        Notice::create([
-            'title' => 'Notice 1',
-            'subtitle' => 'Subtitle 1',
-            'pdf_file' => 'notice1.pdf',
-            'status' => 1,
-            'ranking' => 1,
-        ]);
+        $notices = [
+            [
+                'title' => 'Result 23-24 Session',
+                'subtitle' => NULL,
+                'pdf_file' => 'the-bd-school-multidisiplinary-1.png',
+                'ranking' => NULL,
+                'status' => 1,
+                'created_at' => '2023-05-24 22:54:43',
+                'updated_at' => '2023-05-24 22:54:43',
+            ],
+            [
+                'title' => 'Result Under Graduate Programme',
+                'subtitle' => NULL,
+                'pdf_file' => 'download (3).jpg',
+                'ranking' => NULL,
+                'status' => 1,
+                'created_at' => '2023-05-24 22:55:13',
+                'updated_at' => '2023-05-24 22:55:13',
+            ],
+        ];
 
-        Notice::create([
-            'title' => 'Notice 2',
-            'subtitle' => 'Subtitle 2',
-            'pdf_file' => 'notice2.pdf',
-            'status' => 1,
-            'ranking' => 2,
-        ]);
-
-        Notice::create([
-            'title' => 'Notice 3',
-            'subtitle' => 'Subtitle 3',
-            'pdf_file' => 'notice3.pdf',
-            'status' => 0,
-            'ranking' => 3,
-        ]);
+        foreach ($notices as $notice) {
+            Notice::create($notice);
+        }
     }
 }

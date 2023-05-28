@@ -15,8 +15,6 @@ class CreateHeroTable extends Migration
     {
         Schema::create('hero', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('subtitle');
             $table->string('image');
             $table->tinyInteger('status')->default('1');
             $table->timestamps();

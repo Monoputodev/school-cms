@@ -1,34 +1,59 @@
-<header id="header" class="header">
-    <div class="header-nav">
-        <div class="header-nav-wrapper navbar-scrolltofixed bg-white">
-            <div class="container">
-                <nav id="menuzord-right" class="menuzord default no-bg"><a
-                        class="menuzord-brand pull-left flip mb-15" href="index-mp-layout1.html"><img
-                            src="{{ asset('/') }}uploads/content/{{ $content->website_logo }}"
-                            alt=""></a>
-                    <ul class="list-inline nav-side-icon-list pull-right">
-                        <li>
-                            <a href="#" id="inline-fullwidth-search-btn"><i
-                                    class="search-icon fa fa-search"></i></a>
-                            <div id="inline-fullwidth-search-form" class="clearfix">
-                                <form method="GET">
-                                    <input type="text" name="s" value=""
-                                        placeholder="Type and Press Enter..." autocomplete="off">
-                                </form>
-                                <a href="#" id="close-search-btn"><i class="icon_close"></i></a>
-                            </div>
-                        </li>
-      
-                      
-                    </ul>
-                    <ul class="menuzord-menu onepage-nav ">
-                        <li class="active"><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#team">Teachers</a></li>
-                        <li><a href="#blog">Blog</a></li>
-                        <li><a href="#reservation">Contact</a></li>
-                    </ul>
-                </nav>
+
+<header class="header-area">
+    <div class="header-top blue-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-7 col-12">
+                    <div class="header-top-info">
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <i class="zmdi zmdi-phone"></i>
+                                </a>
+                                {{ $content->website_phone }}
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="zmdi zmdi-globe"></i>
+                                    {{ $content->website_email }}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="header-bottom stick-h2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-12 col-12">
+                    <div class="logo">
+                        <a href="{{ route('index') }}"><img src="{{ asset('') }}uploads/content/{{ $content->website_logo }}" alt=""> </a>
+                    </div>
+                </div>
+                <div class="col-md-8 hidden-sm d-none d-md-block">
+                    <div class="menu-area f-right">
+                        <nav>
+                            <ul>
+                                <li><a href="{{ route('index') }}">Home  </a></li>
+                                <li class="active coloumn-one"><a href="index.html">Notice <i class="zmdi zmdi-caret-down"></i></a>
+                                    <ul>
+                                        <li><a href="text-animation-1.html">home animated text 1</a></li>
+                                        <li><a href="text-animation-2.html">home animated text 2</a></li>
+                                        <li><a href="text-animation-3.html">home animated text 3</a></li>
+                                        <li><a href="text-animation-4.html">home animated text 4</a></li>
+                                    </ul>
+                                </li>
+
+                                <li><a href="{{ route('course.index') }}">Our Programme  </a></li>
+                                <li><a href="{{ route('news.index') }}">NEWS  </a></li>
+                                <li><a class="none-padding" href="contact.html">CONTACT </a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

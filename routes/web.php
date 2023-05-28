@@ -25,13 +25,30 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PublicController::class, 'index'])->name('index');
+
+
+Route::prefix('course')->group(function () {
+    Route::get('/', [PublicController::class, 'allCourse'])->name('course.index');
+    Route::get('/details/{course}', [PublicController::class, 'course'])->name('course.details');
+});
+Route::prefix('teacher')->group(function () {
+    Route::get('/', [PublicController::class, 'allTeacher'])->name('teacher.index');
+    Route::get('/details/{teacher}', [PublicController::class, 'teacher'])->name('teacher.details');
+});
+Route::prefix('news')->group(function () {
+    Route::get('/', [PublicController::class, 'allNews'])->name('news.index');
+    Route::get('/details/{news}', [PublicController::class, 'news'])->name('news.details');
+});
+Route::prefix('notice')->group(function () {
+    Route::get('/', [PublicController::class, 'allNotice'])->name('notice.index');
+    Route::get('/details/{notice}', [PublicController::class, 'notice'])->name('notice.details');
+});
+
 Route::prefix('admissions')->group(function () {
     // Hero-Routes
 
 
     Route::post('/', [AdmissionController::class, 'store'])->name('admissions.store');
-
-
 });
 
 
@@ -47,7 +64,6 @@ Route::prefix('/dashboard')->middleware('auth')->group(function () {
         // Hero-Routes
         Route::get('/', [AdmissionController::class, 'index'])->name('admissions.index');
         Route::get('/{admission}', [AdmissionController::class, 'destroy'])->name('admissions.destroy');
-
     });
 
     Route::prefix('notices')->group(function () {
@@ -130,11 +146,6 @@ Route::prefix('/dashboard')->middleware('auth')->group(function () {
         Route::get('/contact/{content}/edit', [ContentController::class, 'editContact'])->name('contact.edit');
         Route::put('/contact/{content}', [ContentController::class, 'updateContact'])->name('contact.update');
     });
-
-
-
-
-
 });
 
 Auth::routes();

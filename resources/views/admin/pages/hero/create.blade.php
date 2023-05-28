@@ -31,16 +31,7 @@
                                 <form method="POST" action="{{ route('hero.store') }}" enctype="multipart/form-data">
                                     @csrf
                                     <div class="row g-3">
-                                        <div class="col-md-6">
-                                            <label for="title" class="form-label">Title</label>
-                                            <input type="text" class="form-control" id="title" name="title"
-                                                required>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label for="subtitle" class="form-label">Subtitle</label>
-                                            <input type="text" class="form-control" id="subtitle" name="subtitle"
-                                                required>
-                                        </div>
+
 
 
                                         <div class="col-md-6">

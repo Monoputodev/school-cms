@@ -33,17 +33,19 @@
                                 <div class="row g-3">
                                     <div class="col-md-6">
                                         <label for="title" class="form-label">Title</label>
-                                        <input type="text" class="form-control" id="title" name="title" required>
+                                        <input type="text" class="form-control" id="title" name="name" required>
                                     </div>
 
-                                    <div class="col-md-6">
-                                        <label for="subtitle" class="form-label">Sub Title</label>
-                                        <input type="text" class="form-control" id="subtitle" name="subtitle" required>
-                                    </div>
+
                                     <div class="col-md-6">
                                         <label for="description" class="form-label">Description</label>
-                                        <textarea id="summernote" type="text" class="form-control" id="description"
+                                        <textarea  type="text" class="form-control" id="description"
                                           name="description" required></textarea>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="details" class="form-label">Details</label>
+                                        <textarea id="summernote" type="text" class="form-control" id="details"
+                                          name="details" required></textarea>
                                     </div>
 
 

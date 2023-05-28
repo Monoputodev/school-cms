@@ -9,5 +9,5 @@ class Hero extends Model
 {
     use HasFactory;
     protected $table = 'hero';
-    protected $fillable  = ['title','button','subtitle','status','image'];
+    protected $fillable  = ['status','image'];
 }

@@ -15,6 +15,11 @@ class CreateAdmissionsTable extends Migration
     {
         Schema::create('admissions', function (Blueprint $table) {
             $table->id();
+            $table->string('reservation_name');
+            $table->string('reservation_email');
+            $table->string('reservation_phone');
+            $table->string('reservation_course');
+            $table->text('reservation_message')->nullable();
             $table->timestamps();
         });
     }

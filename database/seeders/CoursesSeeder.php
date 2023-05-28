@@ -14,16 +14,29 @@ class CoursesSeeder extends Seeder
      */
     public function run()
     {
-        Courses::create([
-            'name' => 'Diploma in CSE',
-            'description' => 'Course description for Diploma in CSE',
-            'status' => 1,
-        ]);
+        $courses = [
+            [
+                'name' => 'Masters Programme',
+                'image' => 'demo.jpg',
+                'details' => 'what is details',
+                'description' => 'A master\'s degree is a graduate degree that allows...',
+                'status' => 1,
+                'created_at' => '2023-05-27 10:21:07',
+                'updated_at' => '2023-05-27 10:21:07',
+            ],
+            [
+                'name' => 'Under Graduate Proggramme',
+                'image' => 'demo.jpg',
+                'details' => 'what is details',
+                'description' => 'A master\'s degree is a graduate degree that allows...',
+                'status' => 1,
+                'created_at' => '2023-05-27 10:21:24',
+                'updated_at' => '2023-05-27 10:21:24',
+            ],
+        ];
 
-        Courses::create([
-            'name' => 'Diploma in Mechanical',
-            'description' => 'Course description for Diploma in Mechanical',
-            'status' => 1,
-        ]);
+        foreach ($courses as $course) {
+            Courses::create($course);
+        }
     }
 }

@@ -11,6 +11,27 @@
 
         <li class="menu-title" key="t-menu">Web Contents</li>
 
+
+        <li>
+            <a href="javascript: void(0);" class="has-arrow waves-effect">
+                <i class="bx bx-home-circle"></i>
+                <span key="t-admission">Admissions</span>
+            </a>
+            <ul class="sub-menu" aria-expanded="false">
+                <li><a href="{{ route('admissions.index') }}" key="t-list">All Admissions</a></li>
+            </ul>
+        </li>
+<li>
+            <a href="javascript: void(0);" class="has-arrow waves-effect">
+                <i class="bx bx-home-circle"></i>
+                <span key="t-course">Courses</span>
+            </a>
+            <ul class="sub-menu" aria-expanded="false">
+                <li><a href="{{ route('courses.index') }}" key="t-list">All Courses</a></li>
+                <li><a href="{{ route('courses.create') }}" key="t-create">Add Courses</a></li>
+            </ul>
+        </li>
+        {{-- End - notice --}}
         <li>
             <a href="javascript: void(0);" class="has-arrow waves-effect">
                 <i class="bx bx-home-circle"></i>

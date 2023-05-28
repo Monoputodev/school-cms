@@ -1,65 +1,29 @@
 
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Home page || {{ $content->website_name }}</title>
+    <meta name="description" content="{{ $content->website_description }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Meta Tags -->
-    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    <meta name="description"
-        content="Digital Marketing Agencies, SEO companies & Social Media specialists HTML5 Template" />
-    <meta name="keywords" content="marketing,seo,ppc,mapping,linkbuilding,analytics,ads" />
-    <meta name="author" content="ThemeMascot" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('') }}assets/web/images/favicon.png">
 
-    <!-- Page Title -->
-    <title>{{ $content->website_name }}</title>
+    <!-- All css files are included here. -->
+    <!-- Bootstrap fremwork main css -->
+    <link rel="stylesheet" href="{{ asset('') }}assets/web/css/bootstrap.min.css">
+    <!-- This core.css file contents all plugings css file. -->
+    <link rel="stylesheet" href="{{ asset('') }}assets/web/css/core.css">
+    <!-- Theme shortcodes/elements style -->
+    <link rel="stylesheet" href="{{ asset('') }}assets/web/css/shortcode/shortcodes.css">
+    <!-- Theme main style -->
+    <link rel="stylesheet" href="{{ asset('') }}assets/web/css/style.css">
+    <!-- Responsive css -->
+    <link rel="stylesheet" href="{{ asset('') }}assets/web/css/responsive.css">
+    <!-- Style customizer (Remove these two lines please) -->
+    <link rel="stylesheet" href="{{ asset('') }}assets/web/css/style-customizer.css">
+    <link href="#" data-style="styles" rel="stylesheet">
 
-    <!-- Favicon and Touch Icons -->
-    <link href="{{ asset('/uploads/content') }}/{{ $content->website_favicon }}" rel="shortcut icon" type="image/png">
-    <link href="{{ asset('/uploads/content') }}/{{ $content->website_favicon }}" rel="icon">
-    <link href="{{ asset('/uploads/content') }}/{{ $content->website_favicon }}" rel="icon" sizes="72x72">
-    <link href="{{ asset('/uploads/content') }}/{{ $content->website_favicon }}" rel="icon" sizes="114x114">
-    <link href="{{ asset('/uploads/content') }}/{{ $content->website_favicon }}" rel="icon" sizes="144x144">
-
-    <!-- Stylesheet -->
-    <link href="{{ asset('/') }}/assets/web/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="{{ asset('/') }}/assets/web/css/jquery-ui.min.css" rel="stylesheet" type="text/css">
-    <link href="{{ asset('/') }}/assets/web/css/animate.css" rel="stylesheet" type="text/css">
-    <link href="{{ asset('/') }}/assets/web/css/css-plugin-collections.css" rel="stylesheet" />
-    <!-- CSS | menuzord megamenu skins -->
-    <link href="{{ asset('/') }}/assets/web/css/menuzord-megamenu.css" rel="stylesheet" />
-    <link id="menuzord-menu-skins" href="{{ asset('/') }}/assets/web/css/menuzord-skins/menuzord-boxed.css"
-        rel="stylesheet" />
-    <!-- CSS | Main style file -->
-    <link href="{{ asset('/') }}/assets/web/css/style-main.css" rel="stylesheet" type="text/css">
-    <!-- CSS | Preloader Styles -->
-    <link href="{{ asset('/') }}/assets/web/css/preloader.css" rel="stylesheet" type="text/css">
-    <!-- CSS | Custom Margin Padding Collection -->
-    <link href="{{ asset('/') }}/assets/web/css/custom-bootstrap-margin-padding.css" rel="stylesheet"
-        type="text/css">
-    <!-- CSS | Responsive media queries -->
-    <link href="{{ asset('/') }}/assets/web/css/responsive.css" rel="stylesheet" type="text/css">
-    <!-- CSS | Style css. This is the file where you can place your own custom css code. Just uncomment it and use it. -->
-    <!-- <link href="{{ asset('/') }}/assets/web/css/style.css" rel="stylesheet" type="text/css"> -->
-
-    <!-- CSS | Theme Color -->
-    <link href="{{ asset('/') }}/assets/web/css/colors/theme-skin-color-set1.css" rel="stylesheet" type="text/css">
-    <!-- CSS | Style css. This is the file where you can place your own custom css code. Just uncomment it and use it. -->
-    <!-- <link href="{{ asset('/') }}/assets/web/css/style.css" rel="stylesheet" type="text/css"> -->
-    <link href="{{ asset('/') }}/assets/web/js/revolution-slider/css/settings.css" rel="stylesheet"
-        type="text/css" />
-    <link href="{{ asset('/') }}/assets/web/js/revolution-slider/css/layers.css" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('/') }}/assets/web/js/revolution-slider/css/navigation.css" rel="stylesheet"
-        type="text/css" />
-
-    <!-- external javascripts -->
-    <script src="{{ asset('/') }}/assets/web/js/jquery-2.2.4.min.js"></script>
-    <script src="{{ asset('/') }}/assets/web/js/jquery-ui.min.js"></script>
-    <script src="{{ asset('/') }}/assets/web/js/bootstrap.min.js"></script>
-    <!-- JS | jquery plugin collection for this theme -->
-    <script src="{{ asset('/') }}/assets/web/js/jquery-plugin-collection.js"></script>
-
-    <!-- Revolution Slider 5.x SCRIPTS -->
-    <script src="{{ asset('/') }}/assets/web/js/revolution-slider/js/jquery.themepunch.tools.min.js"></script>
-    <script src="{{ asset('/') }}/assets/web/js/revolution-slider/js/jquery.themepunch.revolution.min.js"></script>
-
-
+    <!-- Modernizr JS -->
+    <script src="{{ asset('') }}assets/web/js/vendor/modernizr-3.11.7.min.js"></script>
 </head>

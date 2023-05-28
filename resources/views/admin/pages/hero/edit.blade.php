@@ -31,16 +31,7 @@
                             <form method="POST" action="{{ route('hero.update',$hero->id) }}" enctype="multipart/form-data">
                                 @method('PUT')
                                 @csrf
-                                <div class="row g-3">
-                                  <div class="col-md-6">
-                                    <label for="title" class="form-label">Title</label>
-                                    <input type="text" class="form-control" id="title" name="title" value="{{ $hero->title }}" required>
-                                  </div>
-                                  <div class="col-md-6">
-                                    <label for="subtitle" class="form-label">Subtitle</label>
-                                    <input type="text" class="form-control" id="subtitle" name="subtitle" value="{{ $hero->subtitle }}" required>
-                                  </div>
-                                </div>
+
                                   <div class="col-md-6">
                                     <label for="image" class="form-label">Image</label>
                                     <input type="file" class="form-control dropify" id="image" name="image" data-default-file="{{asset('uploads/hero/'.$hero->image)}}">

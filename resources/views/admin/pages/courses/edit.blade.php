@@ -43,9 +43,13 @@
                                     <div class="col-md-6">
                                         <label for="description" class="form-label">Description</label>
                                         <textarea  type="text" class="form-control" id="description" name="description"
-                                          required>{{ $courses->description }}</textarea>
+                                          >{{ $courses->description }}</textarea>
                                     </div>
-
+                                    <div class="col-md-6">
+                                        <label for="details" class="form-label">Details</label>
+                                        <textarea id="summernote" type="text" class="form-control" id="details"
+                                          name="details" >{!! $courses->details !!}</textarea>
+                                    </div>
                                     <div class="col-md-6">
                                         <label for="image" class="form-label">Image</label>
                                         <input type="file" class="form-control dropify" id="image" name="image"

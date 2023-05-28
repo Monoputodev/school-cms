@@ -17,7 +17,7 @@ class CreateContentTable extends Migration
             $table->id();
             // $table->string('banner_hero');
             // $table->string('banner_hero');
-            $table->string('banner_hero');
+            // $table->string('banner_hero');
             $table->string('website_name');
             $table->text('website_description');
             $table->string('website_logo');
