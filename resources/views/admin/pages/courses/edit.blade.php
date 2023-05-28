@@ -36,19 +36,14 @@
                                 <div class="row g-3">
                                     <div class="col-md-6">
                                         <label for="title" class="form-label">Title</label>
-                                        <input type="text" class="form-control" id="title" name="title"
-                                          value="{{ $courses->title }}" required>
+                                        <input type="text" class="form-control" id="title" name="name"
+                                          value="{{ $courses->name }}" required>
                                     </div>
 
                                     <div class="col-md-6">
-                                        <label for="subtitle" class="form-label">Sub Title</label>
-                                        <input type="text" class="form-control" value="{{ $courses->subtitle }}"
-                                          id="subtitle" name="subtitle" required>
-                                    </div>
-                                    <div class="col-md-6">
                                         <label for="description" class="form-label">Description</label>
-                                        <textarea id="summernote" type="text" class="form-control" id="description" name="description"
-                                          required>{!! $courses->description !!}</textarea>
+                                        <textarea  type="text" class="form-control" id="description" name="description"
+                                          required>{{ $courses->description }}</textarea>
                                     </div>
 
                                     <div class="col-md-6">

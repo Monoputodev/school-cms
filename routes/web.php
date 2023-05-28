@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdmissionController;
 use App\Http\Controllers\Auth\UserController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContentController;
@@ -24,6 +25,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PublicController::class, 'index'])->name('index');
+Route::prefix('admissions')->group(function () {
+    // Hero-Routes
+
+
+    Route::post('/', [AdmissionController::class, 'store'])->name('admissions.store');
+
+
+});
 
 
 Route::post('/package-query', [PackageQuerryController::class, 'store'])->name('package-query.store');
@@ -34,7 +43,12 @@ Route::prefix('/dashboard')->middleware('auth')->group(function () {
     Route::get('/', [PublicController::class, 'dashboard'])->name('dashboard.index');
     Route::get('/package-queries', [PackageQuerryController::class, 'index'])->name('package-queries.index');
 
+    Route::prefix('admissions')->group(function () {
+        // Hero-Routes
+        Route::get('/', [AdmissionController::class, 'index'])->name('admissions.index');
+        Route::get('/{admission}', [AdmissionController::class, 'destroy'])->name('admissions.destroy');
 
+    });
 
     Route::prefix('notices')->group(function () {
         // Hero-Routes
@@ -53,12 +67,13 @@ Route::prefix('/dashboard')->middleware('auth')->group(function () {
         Route::get('/', [CoursesController::class, 'index'])->name('courses.index');
         Route::get('/create', [CoursesController::class, 'create'])->name('courses.create');
         Route::post('/', [CoursesController::class, 'store'])->name('courses.store');
-        Route::get('/{course}', [CoursesController::class, 'show'])->name('courses.show');
-        Route::get('/{course}/edit', [CoursesController::class, 'edit'])->name('courses.edit');
-        Route::put('/{course}', [CoursesController::class, 'update'])->name('courses.update');
-        Route::get('/{course}', [CoursesController::class, 'destroy'])->name('courses.destroy');
-        Route::get('/active/{course}', [CoursesController::class, 'active'])->name('courses.active');
-        
+        Route::get('/{courses}', [CoursesController::class, 'show'])->name('courses.show');
+        Route::get('/{courses}/edit', [CoursesController::class, 'edit'])->name('courses.edit');
+        Route::put('/{courses}', [CoursesController::class, 'update'])->name('courses.update');
+        Route::get('/{courses}', [CoursesController::class, 'destroy'])->name('courses.destroy');
+        Route::get('/active/{courses}', [CoursesController::class, 'active'])->name('courses.active');
+        Route::get('/inactive/{courses}', [CoursesController::class, 'inactive'])->name('courses.inactive');
+    });
 
     Route::prefix('teams')->group(function () {
         // Team-Routes
