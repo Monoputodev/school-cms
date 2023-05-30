@@ -1,22 +1,27 @@
 <div class="countdown-area bg-1 ptb-110 bg-opacity bg-relative">
     <div class="container">
         <div class="row">
-            <div class="col-lg-7 col-md-7 col-12 text-center">
-
-                    <div class="row">
-                        @foreach ($courses as $course)
-                        <div class="col-md-6 col-xs-12">
-                            <div class="single-course bg-white">
-                                <div class="single-coures-text">
-                                    <h3><a href="#">{{ $course->name }}</a></h3>
-                                    <p>{{ $course->description }}</p>
-                                    <a href="#">READ MORE</a>
+            <div class="col-lg-7 col-md-7 col-12 ">
+                <section class="about-area pt-100">
+                    <div class="">
+                        <div class="row">
+                            <div class="col-lg-12 mb-60 mrg-btm-about col-md-12">
+                                <div class="book-img">
+                                    <img alt="#" src="{{ asset('') }}uploads/content/{{ $content->about_image }}">
                                 </div>
                             </div>
-                        </div>
-                        @endforeach
-                    </div>
+                            <div class="col-lg-12 col-md-12">
+                                <div class="about-text">
+                                    <h2>Welcome To {{ $content->website_name }}</h2>
+                                    <p>{!! $content->about_content !!} </p>
 
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
             </div>
             <div class="col-lg-5 col-md-5 col-12">
                 <div class="register-from">

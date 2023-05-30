@@ -7,79 +7,87 @@ use Illuminate\Http\Request;
 
 class TypeController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        $types = Type::all();
+        return view('admin.pages.type.index', compact('types'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('admin.pages.type.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+        ]);
+
+        Type::create($validatedData);
+
+        return redirect()->route('types.index')
+            ->with('success', 'Type created successfully.');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Type  $type
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Type $type)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Type  $type
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Type $type)
     {
-        //
+        return view('admin.pages.type.edit', compact('type'));
     }
 
-    /**
-     * Update the specified resource in storage.
+    public function update(Request $request, Type $type)
+    {
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+        ]);
+
+        $type->update($validatedData);
+
+        return redirect()->route('types.index')
+            ->with('success', 'Type updated successfully.');
+    }
+
+    public function destroy(Type $type)
+    {
+        $type->delete();
+
+        return redirect()->route('types.index')
+            ->with('success', 'Type deleted successfully.');
+    }
+
+         /**
+     * Active the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Type  $type
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Type $type)
+    public function Active(Type $type)
     {
-        //
-    }
 
+        $type->status = '1';
+        if ($type->save()) {
+            return redirect()->route('types.index')->with('success', 'type Activated successfully.');
+        } else {
+            return back()->with('error', 'type Activation Unsuccessfull');
+        }
+    }
     /**
-     * Remove the specified resource from storage.
+     * Inactive  the specified resource in storage.
      *
+     * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Type  $type
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Type $type)
+    public function Inactive(Type $type)
+
     {
-        //
+        // dd($type->status);
+        $type->status = '0';
+        if ($type->save()) {
+            return redirect()->route('types.index')->with('success', 'type Deactivated successfully.');
+        } else {
+            return back()->with('error', 'type Dactivation Unsuccessfull.');
+        }
     }
 }

@@ -15,6 +15,10 @@
                 </div>
                 <!-- End of slider area -->
             </div>
-            <div class="col-sm-2"></div>
+            <div class="col-sm-2">
+                <div class="banner-area">
+                    <img src="{{ asset('/') }}assets/web/images/banner.jpg" class="w-100" alt="">
+                </div>
+            </div>
         </div>
       </div>

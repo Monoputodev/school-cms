@@ -281,8 +281,8 @@
     text-transform: uppercase;
 }
 .countdown-area:before {
-    background-color: #000;
-    opacity: .8;
+    background-color: #fff;
+    /* opacity: .8; */
     z-index: -20;
 }
 .countdown-all,
@@ -309,7 +309,7 @@
     position: relative;
 }
 .register-from .ordering {
-    background: rgba(116, 116, 116, 0.42) none repeat scroll 0 0;
+    background: #000000 none repeat scroll 0 0;
     padding: 90px 30px 40px;
 }
 .register-top::after {

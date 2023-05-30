@@ -33,4 +33,11 @@
 
         </div>
     </div>
+
+
 </div>
+@if (request()->routeIs('index'))
+<div class="view-all-button text-center">
+    <a href="{{ route('teacher.index') }}" class="mx-auto text-center btn btn-dark btn-sm">View All</a>
+</div>
+@endif

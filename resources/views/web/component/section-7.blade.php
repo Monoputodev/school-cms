@@ -36,7 +36,7 @@
                         </div>
                     </div>
                     <div class="img-text gray-bg">
-                        <h3><a href="#">{{ $news->title }}</a></h3>
+                        <h3><a href="{{ route('news.details',$news->id) }}" >{{ $news->title }}</a></h3>
                         <p>{{ $news->subtitle }}</p>
                         <a class="button extra-small" href="{{ route('news.details',$news->id) }}">
                             <span>Read More</span>
@@ -49,4 +49,10 @@
 
         </div>
     </div>
+    @if (request()->routeIs('index'))
+    <div class="view-all-button text-center mt-5">
+        <a href="{{ route('news.index') }}" class="mx-auto text-center btn btn-dark btn-sm">View All</a>
+    </div>
+    @endif
+
 </div>

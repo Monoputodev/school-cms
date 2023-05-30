@@ -9,6 +9,7 @@ use App\Models\Hero;
 use App\Models\Notice;
 use App\Models\Package;
 use App\Models\Team;
+use App\Models\Type;
 
 class PublicController extends Controller
 {
@@ -76,9 +77,11 @@ class PublicController extends Controller
         $notices = Notice::where('status', 1)->orderBy('id', 'DESC')->get();
         return view('web.pages.notice.index', compact('notices'));
     }
-    public function notice($notice)
+    public function notice($type)
     {
-        $notice = Notice::find($notice);
-        return view('web.pages.notice.index', compact('notice'));
+        $cat = Type::find($type);
+        $notices = Notice::where('type',$type)->get();
+        // dd($notice);
+        return view('web.pages.notice.details', compact('notices','cat'));
     }
 }

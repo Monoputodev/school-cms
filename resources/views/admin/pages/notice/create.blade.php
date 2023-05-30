@@ -31,6 +31,7 @@
                             <form method="POST" action="{{ route('notices.store') }}" enctype="multipart/form-data">
                                 @csrf
                                 <div class="row g-3">
+                                   q
                                   <div class="col-md-6">
                                     <label for="title" class="form-label">Title</label>
                                     <input type="text" class="form-control" id="title" name="title" required>

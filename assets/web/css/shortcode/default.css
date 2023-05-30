@@ -1,5 +1,5 @@
 /*
-Template Name: Universe - Education Html Template 
+Template Name: Universe - Education Html Template
 Description: This is html5 template
 Author: DevItem
 Version: 1.2
@@ -26,10 +26,10 @@ Version: 1.2
 16. Padding right
 17. Padding bottom
 18. Padding left
-19. Page section padding 
+19. Page section padding
 20. Page section margin
 21. Extra class
-22. Background variation set 
+22. Background variation set
 23. Opacity background
 24. Image background
 25. Image background
@@ -37,7 +37,7 @@ Version: 1.2
 27. tooltip
 28. separator
 29. Section title 2
- 
+
 ======================================
 [ End table content ]
 ======================================*/
@@ -661,7 +661,7 @@ input {
     background: transparent none repeat scroll 0 0;
     border: 1px solid #c1c1c1;
     box-shadow: none;
-    color: #3f3f3f;
+    color: #ffffff;
     font-size: 14px;
     height: 32px;
     padding-left: 20px;
@@ -1200,7 +1200,7 @@ textarea:focus {
     padding-left: 200px
 }
 /***************************
-    19. Page section padding 
+    19. Page section padding
 ****************************/
 
 .ptb-0 {
@@ -1261,7 +1261,7 @@ textarea:focus {
     padding: 200px 0
 }
 /***************************
-    20. Page section margin 
+    20. Page section margin
 ****************************/
 
 .mtb-0 {
@@ -1365,7 +1365,7 @@ textarea:focus {
     width: 100%;
 }
 /*************************************
-    22. Background variation set 
+    22. Background variation set
  **************************************/
 /*colored background*/
 

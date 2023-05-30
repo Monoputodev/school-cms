@@ -14,5 +14,11 @@ class Notice extends Model
         'subtitle',
         'pdf_file',
         'status',
+        'type',
     ];
+
+    public function types()
+{
+    return $this->belongsTo(Type::class,'type');
+}
 }

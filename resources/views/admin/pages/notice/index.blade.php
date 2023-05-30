@@ -48,6 +48,7 @@
                                     <thead>
                                         <tr>
                                             <th>status</th>
+                                            <th>Type</th>
                                             <th>Title</th>
                                             <th>Subtitle</th>
                                             <th>PDF FILE</th>
@@ -65,6 +66,12 @@
                                                         <span
                                                             class="badge rounded-pill badge-soft-danger font-size-11">Inactive</span>
                                                     @endif
+                                                </td>
+                                                <td>
+
+                                                        <span
+                                                            class="badge rounded-pill badge-soft-info font-size-11">{{ $notice->types->name }}</span>
+
                                                 </td>
                                                 <td>{{ $notice->title }}</td>
                                                 <td>{!! $notice->subtitle !!}</td>

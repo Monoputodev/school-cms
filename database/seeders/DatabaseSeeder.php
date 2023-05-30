@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
             NoticeSeeder::class,
             CoursesSeeder::class,
             TeamSeeder::class,
+            TypeSeeder::class,
         ]);
     }
 }

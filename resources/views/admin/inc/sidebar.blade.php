@@ -35,9 +35,11 @@
         <li>
             <a href="javascript: void(0);" class="has-arrow waves-effect">
                 <i class="bx bx-home-circle"></i>
-                <span key="t-notice">News & Info</span>
+                <span key="t-notice">Notice</span>
             </a>
             <ul class="sub-menu" aria-expanded="false">
+                <li><a href="{{ route('types.index') }}" key="t-list">All Type</a></li>
+                <li><a href="{{ route('types.create') }}" key="t-create">Add Type</a></li>
                 <li><a href="{{ route('notices.index') }}" key="t-list">All Notice</a></li>
                 <li><a href="{{ route('notices.create') }}" key="t-create">Add Notice</a></li>
             </ul>
@@ -61,11 +63,11 @@
         <li>
             <a href="javascript: void(0);" class="has-arrow waves-effect">
                 <i class="bx bx-home-circle"></i>
-                <span key="t-blog">Blog</span>
+                <span key="t-blog">News</span>
             </a>
             <ul class="sub-menu" aria-expanded="false">
-                <li><a href="{{ route('blogs.index') }}" key="t-list">All Blog</a></li>
-                <li><a href="{{ route('blogs.create') }}" key="t-create">Create Blog</a></li>
+                <li><a href="{{ route('blogs.index') }}" key="t-list">All News</a></li>
+                <li><a href="{{ route('blogs.create') }}" key="t-create">Create News</a></li>
             </ul>
         </li>
         {{-- End - blog --}}
@@ -80,6 +82,19 @@
                 <li><a href="{{ route('hero.create') }}" key="t-create">Create Hero</a></li>
             </ul>
         </li>
+           {{-- photo --}}
+   <li>
+    <a href="javascript: void(0);" class="has-arrow waves-effect">
+        <i class="bx bx-home-circle"></i>
+        <span key="t-photo">Gallery</span>
+    </a>
+    <ul class="sub-menu" aria-expanded="false">
+        <li><a href="{{ route('photos.index') }}" key="t-list">All Photo</a></li>
+        <li><a href="{{ route('photos.create') }}" key="t-create">Add Photo</a></li>
+
+    </ul>
+</li>
+{{-- End - photo --}}
         <li>
             <a href="javascript: void(0);" class="has-arrow waves-effect">
                 <i class="bx bx-home-circle"></i>

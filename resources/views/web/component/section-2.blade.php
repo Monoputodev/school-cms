@@ -11,5 +11,10 @@
         <span style="font-size: 18px"><a href=""> <span class="font-weight-bold text-info ml-10 mr-10" >{{ $notice->created_at->format('d  M Y') }}</span> : {{ $notice->title }}</a> <i class="fas fa-search"></i></span>
         @endforeach
     </marquee>
+
 </div>
-<!-- End categoris area -->
+@if (request()->routeIs('index'))
+<div class="view-all-button text-center">
+    <a href="{{ route('notice.index') }}" class="mx-auto text-center btn btn-dark btn-sm">View All</a>
+</div>
+@endif

@@ -10,6 +10,7 @@ use App\Http\Controllers\NoticeController;
 use App\Http\Controllers\PackageQuerryController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\TeamController;
+use App\Http\Controllers\TypeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -90,6 +91,32 @@ Route::prefix('/dashboard')->middleware('auth')->group(function () {
         Route::get('/active/{courses}', [CoursesController::class, 'active'])->name('courses.active');
         Route::get('/inactive/{courses}', [CoursesController::class, 'inactive'])->name('courses.inactive');
     });
+    Route::prefix('types')->group(function () {
+        // Type-Routes
+        Route::get('/', [TypeController::class, 'index'])->name('types.index');
+        Route::get('/create', [TypeController::class, 'create'])->name('types.create');
+        Route::post('/', [TypeController::class, 'store'])->name('types.store');
+        Route::get('/{type}', [TypeController::class, 'show'])->name('types.show');
+        Route::get('/{type}/edit', [TypeController::class, 'edit'])->name('types.edit');
+        Route::put('/{type}', [TypeController::class, 'update'])->name('types.update');
+        Route::get('/{type}', [TypeController::class, 'destroy'])->name('types.destroy');
+        Route::get('/active/{type}', [TypeController::class, 'active'])->name('types.active');
+        Route::get('/inactive/{type}', [TypeController::class, 'inactive'])->name('types.inactive');
+    });
+
+    Route::prefix('photos')->group(function () {
+        // Hero-Routes
+        Route::get('/', [PhotoController::class, 'index'])->name('photos.index');
+        Route::get('/create', [PhotoController::class, 'create'])->name('photos.create');
+        Route::post('/', [PhotoController::class, 'store'])->name('photos.store');
+        Route::get('/{photo}', [PhotoController::class, 'show'])->name('photos.show');
+        Route::get('/{photo}/edit', [PhotoController::class, 'edit'])->name('photos.edit');
+        Route::put('/{photo}', [PhotoController::class, 'update'])->name('photos.update');
+        Route::get('/{photo}', [PhotoController::class, 'destroy'])->name('photos.destroy');
+        Route::get('/active/{photo}', [PhotoController::class, 'active'])->name('photos.active');
+        Route::get('/inactive/{photo}', [PhotoController::class, 'inactive'])->name('photos.inactive');
+    });
+
 
     Route::prefix('teams')->group(function () {
         // Team-Routes

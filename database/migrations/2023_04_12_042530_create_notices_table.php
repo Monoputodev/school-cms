@@ -13,7 +13,7 @@ class CreateNoticesTable extends Migration
             $table->string('title');
             $table->string('subtitle')->nullable();
             $table->string('pdf_file');
-            $table->string('ranking')->nullable();
+            $table->string('type')->nullable();
             $table->string('status')->default('1');
             $table->timestamps();
         });

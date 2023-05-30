@@ -20,9 +20,12 @@
                                 <div class="tab-content fix">
                                     <div class="tab-pane active" id="preview-2">
                                         <ul class="tab-list nav" role="tablist">
-                                            <li><a class="" href="#home" data-bs-toggle="tab" aria-selected="false" role="tab" tabindex="-1">Home</a></li>
-                                            <li><a href="#profile" data-bs-toggle="tab" aria-selected="false" role="tab" class="" tabindex="-1">Profile</a></li>
-                                            <li><a href="#messages" data-bs-toggle="tab" aria-selected="true" role="tab" class="active">Messages</a></li>
+                                            @foreach ($types as $type)
+
+                                            @endforeach
+                                            <li><a href="#home" data-bs-toggle="tab" aria-selected="false" role="tab">Home</a></li>
+                                            <li><a href="#profile" data-bs-toggle="tab" aria-selected="false" role="tab" >Profile</a></li>
+                                            <li><a href="#messages" data-bs-toggle="tab" aria-selected="true" role="tab" >Messages</a></li>
                                         </ul>
                                         <div class="tab-content">
                                             <div class="tab-pane" id="home" role="tabpanel">

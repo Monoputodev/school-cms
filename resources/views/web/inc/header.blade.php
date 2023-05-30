@@ -40,13 +40,15 @@
                                 <li><a href="{{ route('index') }}">Home  </a></li>
                                 <li class="active coloumn-one"><a href="index.html">Notice <i class="zmdi zmdi-caret-down"></i></a>
                                     <ul>
-                                        <li><a href="text-animation-1.html">home animated text 1</a></li>
-                                        <li><a href="text-animation-2.html">home animated text 2</a></li>
-                                        <li><a href="text-animation-3.html">home animated text 3</a></li>
-                                        <li><a href="text-animation-4.html">home animated text 4</a></li>
+                                        @foreach ($types as $type)
+                                        <li><a href="{{ route('notice.details',$type->id) }}">{{ $type->name }}</a></li>
+
+                                        @endforeach
+
                                     </ul>
                                 </li>
 
+                                <li><a href="{{ route('teacher.index') }}">Teachers  </a></li>
                                 <li><a href="{{ route('course.index') }}">Our Programme  </a></li>
                                 <li><a href="{{ route('news.index') }}">NEWS  </a></li>
                                 <li><a class="none-padding" href="contact.html">CONTACT </a></li>
