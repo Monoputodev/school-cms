@@ -45,12 +45,14 @@ class PhotoController extends Controller
     {
         //  dd($request->all());
         $data = $request->validate([
+            'title' => 'nullable', // max file size of 2MB
             'image' => 'required|image|max:2048', // max file size of 2MB
         ]);
         $image = $request->file('image');
         $imageName = time().'.'.$image->extension();
 
         $img = Image::make($image->path());
+        $img->fit(370,300);
         $img->encode('jpg', 80); // convert image to JPEG format with 80% quality and reduce file size to 80kb
         $img->save(base_path('/uploads/photos/').$imageName);
         $data['image'] = $imageName;
@@ -107,7 +109,8 @@ if ( $photo) {
     public function update(Request $request, Photo $photo)
     {
         $data = $request->validate([
-
+            'title' => 'nullable',
+            'ranking' => 'nullable',
         ]);
 
         if ($request->hasFile('image')) {
@@ -115,6 +118,7 @@ if ( $photo) {
             $imageName = time().'.'.$image->extension();
 
             $img = Image::make($image->path());
+            $img->fit(370,300);
             $img->encode('jpg', 80); // convert image to JPEG format with 80% quality and reduce file size to 80kb
             $img->save(base_path('/uploads/photos/').$imageName);
 

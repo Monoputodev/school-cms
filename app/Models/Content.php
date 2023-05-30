@@ -16,6 +16,10 @@ class Content extends Model
         'website_address',
         'about_content',
         'about_image',
+        'banner_hero',
+        'banner_top',
+        'banner_hero_status',
+        'banner_top_status',
         'blog_background',
     ];
 }

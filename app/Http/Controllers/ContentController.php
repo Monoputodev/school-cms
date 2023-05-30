@@ -150,7 +150,7 @@ class ContentController extends Controller
             $imageName = time() . '.' . $image->extension();
 
             $img = Image::make($image->path());
-            $img->fit(225, 72); // resize the image to fit 225n 72 while preserving aspect ratio
+            $img->fit(300 , 240); // resize the image to fit 225n 72 while preserving aspect ratio
             $img->encode('jpg', 80); // convert image to JPEG format with 80% quality and reduce file size to 80kb
             $img->save(base_path('/uploads/content/') . $imageName);
 
@@ -162,7 +162,7 @@ class ContentController extends Controller
             $imageName = time() . '.' . $image->extension();
 
             $img = Image::make($image->path());
-            $img->fit(225, 72); // resize the image to fit within 550x3430 while preserving aspect ratio
+            $img->fit(16, 16); // resize the image to fit within 550x3430 while preserving aspect ratio
             $img->encode('jpg', 80); // convert image to JPEG format with 80% quality and reduce file size to 80kb
             $img->save(base_path('/uploads/content/') . $imageName);
 
@@ -177,14 +177,45 @@ class ContentController extends Controller
         return back()->with('success', 'Website General Content updated successfully.');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Content  $content
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Content $content)
+    public function editAdvertisement(Content $content)
     {
-        //
+        return view('admin.pages.conent.advertisement', compact('content'));
+    }
+    public function updateAdvertisement(Request $request, Content $content)
+    {
+        $validatedData = $request->validate([
+            'banner_top_status' => 'required',
+            'banner_hero_status' => 'required',
+        ]);
+        if ($request->hasFile('banner_top')) {
+            $image = $request->file('banner_top');
+            $imageName = time() . '.' . $image->extension();
+
+            $img = Image::make($image->path());
+            $img->fit(1270, 150); // resize the image to fit 225n 72 while preserving aspect ratio
+            $img->encode('jpg', 80); // convert image to JPEG format with 80% quality and reduce file size to 80kb
+            $img->save(base_path('/uploads/content/') . $imageName);
+
+            $content->banner_top = $imageName;
+        }
+
+        if ($request->hasFile('banner_hero')) {
+            $image = $request->file('banner_hero');
+            $imageName = time() . '.' . $image->extension();
+
+            $img = Image::make($image->path());
+            $img->fit(600, 1500); // resize the image to fit within 550x3430 while preserving aspect ratio
+            $img->encode('jpg', 80); // convert image to JPEG format with 80% quality and reduce file size to 80kb
+            $img->save(base_path('/uploads/content/') . $imageName);
+
+            $content->banner_hero = $imageName;
+        }
+
+        $content->banner_top_status = $validatedData['banner_top_status'];
+        $content->banner_hero_status = $validatedData['banner_hero_status'];
+
+        $content->save();
+
+        return back()->with('success', 'Website Advertisement Content updated successfully.');
     }
 }

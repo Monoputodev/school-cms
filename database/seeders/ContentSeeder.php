@@ -29,6 +29,10 @@ class ContentSeeder extends Seeder
             Mission
             Execute the principals and action of works to ensure the standardized Diploma Engineering Educational and basic trade course Training.',
             'about_image' => '1685015565.png',
+            'banner_hero' => 'banner.jpg',
+            'banner_top' => 'top.jpg',
+            'banner_hero_status' => '1',
+            'banner_top_status' => '1',
             'created_at' => '2023-05-24 22:02:48',
             'updated_at' => '2023-05-24 23:09:52',
         ];

@@ -44,13 +44,13 @@
                                                 value="{{ $content->website_description }}" required>
                                         </div>
                                         <div class="col-md-6">
-                                            <label for="image" class="form-label">Website Logo</label>
+                                            <label for="image" class="form-label">Website Logo (recomended: 300 *240 px)</label>
                                             <input type="file" class="form-control dropify" id="image"
                                                 name="website_logo"
                                                 data-default-file="{{ asset('uploads/content/' . $content->website_logo) }}">
                                         </div>
                                         <div class="col-md-6">
-                                            <label for="image" class="form-label">Website Favicon</label>
+                                            <label for="image" class="form-label">Website Favicon (recomended: 16 *16 px)</label>
                                             <input type="file" class="form-control dropify" id="image"
                                                 name="website_favicon"
                                                 data-default-file="{{ asset('uploads/content/' . $content->website_favicon) }}">

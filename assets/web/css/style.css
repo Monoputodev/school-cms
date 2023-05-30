@@ -31,7 +31,9 @@
 /*----------------------------------------*/
 /*  5. Home page
 /*----------------------------------------*/
-
+*{
+    scroll-behavior: smooth;
+}
 .offer-icon {
     border: 1px solid #c1c1c1;
     float: left;

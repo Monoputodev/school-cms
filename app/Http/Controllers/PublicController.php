@@ -8,6 +8,7 @@ use App\Models\Courses;
 use App\Models\Hero;
 use App\Models\Notice;
 use App\Models\Package;
+use App\Models\Photo;
 use App\Models\Team;
 use App\Models\Type;
 
@@ -15,12 +16,13 @@ class PublicController extends Controller
 {
     public function index()
     {
-        $courses = Courses::all();
+        $courses = Courses::all()->take(8);
         $sliders = Hero::all();
         $notices = Notice::all();
-        $blogs = Blog::all();
-        $teams = Team::all();
-        return view('web.pages.index', compact('sliders', 'notices', 'blogs', 'teams', 'courses'));
+        $blogs = Blog::all()->take(3);
+        $teams = Team::all()->take(4);
+        $photos = Photo::all()->take(6);
+        return view('web.pages.index', compact('sliders', 'notices', 'blogs', 'teams', 'courses','photos'));
     }
 
     public function dashboard()
@@ -32,6 +34,20 @@ class PublicController extends Controller
     {
         # code...
     }
+    public function admission()
+    {$courses = Courses::all();
+
+        return view('web.pages.admission',compact('courses'));
+    }
+
+    public function allphoto()
+    {
+        $photos = Photo::where('status', 1)->orderBy('id', 'DESC')->get();
+        return view('web.pages.gallery', compact('photos'));
+    }
+
+
+
 
     public function allteacher()
     {

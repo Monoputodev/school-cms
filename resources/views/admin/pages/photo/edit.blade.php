@@ -42,10 +42,6 @@
                                     <label for="title" class="form-label">Title</label>
                                     <input type="text" class="form-control" id="title" name="title" value="{{ $photo->title }}" >
                                   </div>
-                                  <div class="col-md-6">
-                                    <label for="ranking" class="form-label">Ranking</label>
-                                    <input type="text" class="form-control" id="ranking" name="ranking" value="{{ $photo->ranking }}" >
-                                  </div>
 
 
                                   <div class="col-md-6">

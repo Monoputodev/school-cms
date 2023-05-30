@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('') }}assets/web/images/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('') }}uploads/content/{{ $content->website_favicon }}">
 
     <!-- All css files are included here. -->
     <!-- Bootstrap fremwork main css -->

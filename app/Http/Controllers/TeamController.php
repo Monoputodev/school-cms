@@ -123,7 +123,7 @@ if ( $team) {
             $imageName = time().'.'.$image->extension();
 
             $img = Image::make($image->path());
-            $img->fit(265,275); // resize the image to fit within 380x310 while preserving aspect ratio
+           // resize the image to fit within 380x310 while preserving aspect ratio
             $img->encode('jpg', 80); // convert image to JPEG format with 80% quality and reduce file size to 80kb
             $img->save(base_path('/uploads/teams/').$imageName);
 

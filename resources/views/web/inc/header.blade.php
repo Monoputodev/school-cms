@@ -1,36 +1,24 @@
 
 <header class="header-area">
-    <div class="header-top blue-bg">
-        <div class="container">
+    @if ($content->banner_top_status == 1)
+    <div class="header-top ">
+        <div class="container-md g-0">
             <div class="row">
-                <div class="col-lg-6 col-md-7 col-12">
-                    <div class="header-top-info">
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <i class="zmdi zmdi-phone"></i>
-                                </a>
-                                {{ $content->website_phone }}
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="zmdi zmdi-globe"></i>
-                                    {{ $content->website_email }}
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="col-lg-12">
+                   <img src="{{ asset('/') }}uploads/content/{{ $content->banner_top }}" class="w-100" alt="">
                 </div>
 
             </div>
         </div>
     </div>
+    @endif
+
     <div class="header-bottom stick-h2">
-        <div class="container">
+        <div class="container-md g-0">
             <div class="row">
                 <div class="col-lg-4 col-md-12 col-12">
                     <div class="logo">
-                        <a href="{{ route('index') }}"><img src="{{ asset('') }}uploads/content/{{ $content->website_logo }}" alt=""> </a>
+                        <a href="{{ route('index') }}"><img src="{{ asset('') }}uploads/content/{{ $content->website_logo }}" class="logo" alt=""> </a>
                     </div>
                 </div>
                 <div class="col-md-8 hidden-sm d-none d-md-block">
@@ -48,10 +36,11 @@
                                     </ul>
                                 </li>
 
+                                <li><a href="{{ route('admission.index') }}">Admission</a></li>
                                 <li><a href="{{ route('teacher.index') }}">Teachers  </a></li>
                                 <li><a href="{{ route('course.index') }}">Our Programme  </a></li>
                                 <li><a href="{{ route('news.index') }}">NEWS  </a></li>
-                                <li><a class="none-padding" href="contact.html">CONTACT </a></li>
+                                <li><a href="#contact">CONTACT </a></li>
                             </ul>
                         </nav>
                     </div>

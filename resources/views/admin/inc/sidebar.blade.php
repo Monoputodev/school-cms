@@ -104,6 +104,7 @@
                 <li><a href="{{ route('about.edit', 1) }}" key="t-list">About Us</a></li>
                 <li><a href="{{ route('contact.edit', 1) }}" key="t-list">Contact Info</a></li>
                 <li><a href="{{ route('general.edit', 1) }}" key="t-list">General Setting</a></li>
+                <li><a href="{{ route('advertisement.edit', 1) }}" key="t-list">Advertisement Setting</a></li>
             </ul>
         </li>
         {{-- End - hero --}}

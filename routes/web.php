@@ -33,6 +33,9 @@ Route::prefix('course')->group(function () {
     Route::get('/', [PublicController::class, 'allCourse'])->name('course.index');
     Route::get('/details/{course}', [PublicController::class, 'course'])->name('course.details');
 });
+Route::get('/gallery', [PublicController::class, 'allphoto'])->name('gallery.index');
+Route::get('/admission', [PublicController::class, 'admission'])->name('admission.index');
+
 Route::prefix('teacher')->group(function () {
     Route::get('/', [PublicController::class, 'allTeacher'])->name('teacher.index');
     Route::get('/details/{teacher}', [PublicController::class, 'teacher'])->name('teacher.details');
@@ -168,7 +171,8 @@ Route::prefix('/dashboard')->middleware('auth')->group(function () {
 
         Route::get('/about/{content}/edit', [ContentController::class, 'editAbout'])->name('about.edit');
         Route::put('/about/{content}', [ContentController::class, 'updateAbout'])->name('about.update');
-
+        Route::get('/advertisement/{content}/edit', [ContentController::class, 'editAdvertisement'])->name('advertisement.edit');
+        Route::put('/advertisement/{content}', [ContentController::class, 'updateAdvertisement'])->name('advertisement.update');
         Route::get('/general/{content}/edit', [ContentController::class, 'editGeneral'])->name('general.edit');
         Route::put('/general/{content}', [ContentController::class, 'updateGeneral'])->name('general.update');
         Route::get('/contact/{content}/edit', [ContentController::class, 'editContact'])->name('contact.edit');
