@@ -8,6 +8,7 @@ use App\Http\Controllers\CoursesController;
 use App\Http\Controllers\HeroController;
 use App\Http\Controllers\NoticeController;
 use App\Http\Controllers\PackageQuerryController;
+use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TypeController;
@@ -106,7 +107,7 @@ Route::prefix('/dashboard')->middleware('auth')->group(function () {
 
     Route::prefix('photos')->group(function () {
         // Hero-Routes
-        Route::get('/', [PhotoController::class, 'index'])->name('photos.index');
+        Route::get('/', [PhotoController ::class, 'index'])->name('photos.index');
         Route::get('/create', [PhotoController::class, 'create'])->name('photos.create');
         Route::post('/', [PhotoController::class, 'store'])->name('photos.store');
         Route::get('/{photo}', [PhotoController::class, 'show'])->name('photos.show');
