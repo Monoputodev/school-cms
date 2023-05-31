@@ -10,6 +10,8 @@ use App\Http\Controllers\NoticeController;
 use App\Http\Controllers\PackageQuerryController;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\PublicController;
+use App\Http\Controllers\ResultController;
+use App\Http\Controllers\RutineController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TypeController;
 use Illuminate\Support\Facades\Auth;
@@ -147,9 +149,32 @@ Route::prefix('/dashboard')->middleware('auth')->group(function () {
         Route::get('/inactive/{blog}', [BlogController::class, 'inactive'])->name('blogs.inactive');
     });
 
+    Route::prefix('rutines')->group(function () {
+        // Rutine-Routes
+        Route::get('/', [RutineController::class, 'index'])->name('rutines.index');
+        Route::get('/create', [RutineController::class, 'create'])->name('rutines.create');
+        Route::post('/', [RutineController::class, 'store'])->name('rutines.store');
+        Route::get('/{rutine}', [RutineController::class, 'show'])->name('rutines.show');
+        Route::get('/{rutine}/edit', [RutineController::class, 'edit'])->name('rutines.edit');
+        Route::put('/{rutine}', [RutineController::class, 'update'])->name('rutines.update');
+        Route::get('/{rutine}', [RutineController::class, 'destroy'])->name('rutines.destroy');
+        Route::get('/active/{rutine}', [RutineController::class, 'active'])->name('rutines.active');
+        Route::get('/inactive/{rutine}', [RutineController::class, 'inactive'])->name('rutines.inactive');
+    });
 
 
-
+    Route::prefix('results')->group(function () {
+        // Result-Routes
+        Route::get('/', [ResultController::class, 'index'])->name('results.index');
+        Route::get('/create', [ResultController::class, 'create'])->name('results.create');
+        Route::post('/', [ResultController::class, 'store'])->name('results.store');
+        Route::get('/{result}', [ResultController::class, 'show'])->name('results.show');
+        Route::get('/{result}/edit', [ResultController::class, 'edit'])->name('results.edit');
+        Route::put('/{result}', [ResultController::class, 'update'])->name('results.update');
+        Route::get('/{result}', [ResultController::class, 'destroy'])->name('results.destroy');
+        Route::get('/active/{result}', [ResultController::class, 'active'])->name('results.active');
+        Route::get('/inactive/{result}', [ResultController::class, 'inactive'])->name('results.inactive');
+    });
 
     Route::prefix('hero')->group(function () {
         // Hero-Routes

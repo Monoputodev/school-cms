@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\Blog;
 use App\Models\Content;
+use App\Models\Courses;
 use App\Models\Type;
 use Illuminate\Support\ServiceProvider;
 
@@ -30,6 +31,8 @@ class AppServiceProvider extends ServiceProvider
  view()->share('content', $content);
  $types =  Type::where('status',1)->get();
  view()->share('types', $types);
+ $courses = Courses::where('status' , 1)->get();
+ view()->share('courses', $courses);
 //  $blogs = Blog::orderBy('id', 'DESC')->get();
 //  view()->share('blogs', $blogs);
 

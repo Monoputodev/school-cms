@@ -7,7 +7,8 @@
                         <div class="row">
                             <div class="col-lg-12 mb-60 mrg-btm-about col-md-12">
                                 <div class="book-img">
-                                    <img alt="#" src="{{ asset('') }}uploads/content/{{ $content->about_image }}">
+                                    <img alt="#"
+                                        src="{{ asset('') }}uploads/content/{{ $content->about_image }}">
                                 </div>
                             </div>
                             <div class="col-lg-12 col-md-12">
@@ -31,19 +32,22 @@
                     </div>
                     <form action="{{ route('admissions.store') }}" method="POST" class="ordering">
                         @csrf
-                        <input class="form-control2" required="" placeholder="Name*" name="reservation_name" type="text">
-                        <input class="form-control2" required="" name="reservation_email" placeholder="Email*" type="email">
-                        <input class="form-control2" required="" name="reservation_phone" placeholder="phone*" type="phone">
+                        <input class="form-control2" required="" placeholder="Name*" name="reservation_name"
+                            type="text">
+                        <input class="form-control2" required="" name="reservation_email" placeholder="Email*"
+                            type="email">
+                        <input class="form-control2" required="" name="reservation_phone" placeholder="Phone*"
+                            type="phone">
                         <div class="orderby-wrapper">
                             <select name="reservation_course" class="orderby">
                                 @foreach ($courses as $course)
-                                <option value="{{ $course->id }}">{{ $course->name }}</option>
-
-@endforeach
+                                    <option value="{{ $course->id }}">{{ $course->name }}</option>
+                                @endforeach
                             </select>
                         </div>
+                        <input cols="30" rows="10" class="form-control2" required=""
+                            name="reservation_message" placeholder="message">
 
-                        <input cols="30" rows="10" class="form-control2" required="" name="reservation_message" placeholder="message"></input>
                         <div class="sent text-center">
                             <button class="submit" type="submit">
                                 submit

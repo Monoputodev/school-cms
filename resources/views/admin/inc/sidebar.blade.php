@@ -21,7 +21,7 @@
                 <li><a href="{{ route('admissions.index') }}" key="t-list">All Admissions</a></li>
             </ul>
         </li>
-<li>
+        <li>
             <a href="javascript: void(0);" class="has-arrow waves-effect">
                 <i class="bx bx-home-circle"></i>
                 <span key="t-course">Courses</span>
@@ -46,18 +46,18 @@
         </li>
         {{-- End - notice --}}
 
-                {{-- start - team --}}
-                <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="bx bx-home-circle"></i>
-                        <span key="t-team">Teacher</span>
-                    </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="{{ route('teams.index') }}" key="t-list">All Teacher</a></li>
-                        <li><a href="{{ route('teams.create') }}" key="t-create">Create Teacher</a></li>
-                    </ul>
-                </li>
-                {{-- End - blog --}}
+        {{-- start - team --}}
+        <li>
+            <a href="javascript: void(0);" class="has-arrow waves-effect">
+                <i class="bx bx-home-circle"></i>
+                <span key="t-team">Teacher</span>
+            </a>
+            <ul class="sub-menu" aria-expanded="false">
+                <li><a href="{{ route('teams.index') }}" key="t-list">All Teacher</a></li>
+                <li><a href="{{ route('teams.create') }}" key="t-create">Create Teacher</a></li>
+            </ul>
+        </li>
+        {{-- End - blog --}}
 
         {{-- start - blog --}}
         <li>
@@ -82,19 +82,46 @@
                 <li><a href="{{ route('hero.create') }}" key="t-create">Create Hero</a></li>
             </ul>
         </li>
-           {{-- photo --}}
-   <li>
-    <a href="javascript: void(0);" class="has-arrow waves-effect">
-        <i class="bx bx-home-circle"></i>
-        <span key="t-photo">Gallery</span>
-    </a>
-    <ul class="sub-menu" aria-expanded="false">
-        <li><a href="{{ route('photos.index') }}" key="t-list">All Photo</a></li>
-        <li><a href="{{ route('photos.create') }}" key="t-create">Add Photo</a></li>
+        {{-- result --}}
+        <li>
+            <a href="javascript: void(0);" class="has-arrow waves-effect">
+                <i class="bx bx-home-circle"></i>
+                <span key="t-result">Results</span>
+            </a>
+            <ul class="sub-menu" aria-expanded="false">
+                <li><a href="{{ route('results.index') }}" key="t-list">All Result</a></li>
+                <li><a href="{{ route('results.create') }}" key="t-create">Add Result</a></li>
 
-    </ul>
-</li>
-{{-- End - photo --}}
+            </ul>
+        </li>
+        {{-- End - result --}}
+        {{-- rutine --}}
+        <li>
+            <a href="javascript: void(0);" class="has-arrow waves-effect">
+                <i class="bx bx-home-circle"></i>
+                <span key="t-rutine">Rutines</span>
+            </a>
+            <ul class="sub-menu" aria-expanded="false">
+                <li><a href="{{ route('rutines.index') }}" key="t-list">All Rutine</a></li>
+                <li><a href="{{ route('rutines.create') }}" key="t-create">Add Rutine</a></li>
+
+            </ul>
+        </li>
+        {{-- End - rutine --}}
+
+        {{-- photo --}}
+        <li>
+            <a href="javascript: void(0);" class="has-arrow waves-effect">
+                <i class="bx bx-home-circle"></i>
+                <span key="t-photo">Gallery</span>
+            </a>
+            <ul class="sub-menu" aria-expanded="false">
+                <li><a href="{{ route('photos.index') }}" key="t-list">All Photo</a></li>
+                <li><a href="{{ route('photos.create') }}" key="t-create">Add Photo</a></li>
+
+            </ul>
+        </li>
+        {{-- End - photo --}}
         <li>
             <a href="javascript: void(0);" class="has-arrow waves-effect">
                 <i class="bx bx-home-circle"></i>

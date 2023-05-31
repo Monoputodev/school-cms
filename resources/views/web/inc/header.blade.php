@@ -26,21 +26,16 @@
                         <nav>
                             <ul>
                                 <li><a href="{{ route('index') }}">Home  </a></li>
-                                <li class="active coloumn-one"><a href="index.html">Notice <i class="zmdi zmdi-caret-down"></i></a>
-                                    <ul>
-                                        @foreach ($types as $type)
-                                        <li><a href="{{ route('notice.details',$type->id) }}">{{ $type->name }}</a></li>
-
-                                        @endforeach
-
-                                    </ul>
-                                </li>
-
                                 <li><a href="{{ route('admission.index') }}">Admission</a></li>
+                                <li ><a href="{{ route('notice.index') }}">Notice</a></li>
+                                @foreach ($types as $type)
+                                <li><a href="{{ route('notice.details',$type->id) }}">{{ $type->name }}</a></li>
+
+                                @endforeach
                                 <li><a href="{{ route('teacher.index') }}">Teachers  </a></li>
-                                <li><a href="{{ route('course.index') }}">Our Programme  </a></li>
-                                <li><a href="{{ route('news.index') }}">NEWS  </a></li>
-                                <li><a href="#contact">CONTACT </a></li>
+                                <li><a href="{{ route('course.index') }}">Our Courses  </a></li>
+                                <li><a href="{{ route('news.index') }}">News  </a></li>
+                                <li><a href="#contact">Contact </a></li>
                             </ul>
                         </nav>
                     </div>

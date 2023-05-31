@@ -120,7 +120,7 @@
 }
 .chosen-container .chosen-single div b::before {
     color: #fff;
-    content: "";
+    content: "ïƒ—";
     font-family: FontAwesome;
     font-size: 14px;
     margin-left: -12px;
@@ -341,7 +341,7 @@
     text-align: center;
 }
 input.form-control2 {
-    margin: 40px 0;
+    margin: 15px 0;
 }
 .ordering input::-webkit-input-placeholder {
     /* Chrome */
@@ -594,7 +594,7 @@ a.button.extra-small.news-btn span {
 }
 .cnt-two::after {
     color: #fff;
-    content: "";
+    content: "ï‚¥";
     font-family: icofont;
     font-size: 14px;
     margin-left: 5px;
@@ -739,7 +739,7 @@ a.button.extra-small.news-btn span {
 }
 .about-text li::before {
     color: #3f3f3f;
-    content: "";
+    content: "î¾¬";
     font-family: icofont;
     font-size: 14px;
     left: 0;
@@ -796,7 +796,7 @@ a.button.extra-small.news-btn span {
 }
 .testimonial2-right p::before {
     color: #fff;
-    content: "";
+    content: "ï‚±";
     font-family: icofont;
     font-size: 30px;
     left: -28px;
@@ -1484,7 +1484,7 @@ h3.leave-comment-text {
 }
 .news-details-middle > .sit::before {
     color: #0151b0;
-    content: "";
+    content: "ï‚±";
     font-family: icofont;
     font-size: 30px;
     left: 79px;
@@ -1695,7 +1695,7 @@ h2.page-title {
 }
 .breadcrumbs ul li a::after {
     color: #fff;
-    content: "";
+    content: "ï„…";
     font-family: FontAwesome;
     font-size: 14px;
     margin-left: 11px;
@@ -1827,7 +1827,7 @@ h2.page-title {
 }
 .single-coures-text > a::before {
     color: #555;
-    content: "";
+    content: "ï‹¶";
     font-family: Material-Design-Iconic-Font;
     font-size: 14px;
     position: absolute;
