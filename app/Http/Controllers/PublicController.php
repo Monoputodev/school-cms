@@ -9,6 +9,8 @@ use App\Models\Hero;
 use App\Models\Notice;
 use App\Models\Package;
 use App\Models\Photo;
+use App\Models\Result;
+use App\Models\Rutine;
 use App\Models\Team;
 use App\Models\Type;
 
@@ -22,7 +24,9 @@ class PublicController extends Controller
         $blogs = Blog::all()->take(3);
         $teams = Team::all()->take(4);
         $photos = Photo::all()->take(6);
-        return view('web.pages.index', compact('sliders', 'notices', 'blogs', 'teams', 'courses','photos'));
+        $rutines = Rutine::all()->take(4);
+        $results = Result::all()->take(4);
+        return view('web.pages.index', compact('sliders', 'notices', 'blogs', 'teams', 'courses','photos','rutines','results'));
     }
 
     public function dashboard()
