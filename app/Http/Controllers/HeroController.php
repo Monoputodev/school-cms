@@ -44,8 +44,7 @@ class HeroController extends Controller
     {
         //   dd($request->all());
         $validatedData = $request->validate([
-            'title' => 'required',
-            'subtitle' => 'required',
+
             'image' => 'required|image|max:2048', // max file size of 2MB
         ]);
 // dd($validatedData);
@@ -58,8 +57,6 @@ class HeroController extends Controller
         $img->save(base_path('/uploads/hero/').$imageName);
 
         $hero = new Hero();
-        $hero->title = $validatedData['title'];
-        $hero->subtitle = $validatedData['subtitle'];
         $hero->image = $imageName;
 
 if ( $hero->save()) {
@@ -107,8 +104,7 @@ if ( $hero->save()) {
     public function update(Request $request, Hero $hero)
     {
         $validatedData = $request->validate([
-            'title' => 'required',
-            'subtitle' => 'required',
+
         ]);
 
         if ($request->hasFile('image')) {
@@ -123,8 +119,6 @@ if ( $hero->save()) {
             $hero->image = $imageName;
         }
 
-        $hero->title = $validatedData['title'];
-        $hero->subtitle = $validatedData['subtitle'];
         $hero->save();
 
         return redirect()->route('hero.index')->with('success', 'Hero updated successfully.');

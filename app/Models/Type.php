@@ -11,7 +11,7 @@ class Type extends Model
     protected $fillable = ['name', 'status'];
     public function notices()
     {
-        return $this->hasMany(Notice::class);
+        return $this->hasMany(Notice::class,'type');
     }
 
 }

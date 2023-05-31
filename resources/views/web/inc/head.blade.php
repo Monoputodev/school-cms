@@ -1,4 +1,3 @@
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -7,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('') }}uploads/content/{{ $content->website_favicon }}">
+    <link rel="shortcut icon" type="image/x-icon"
+        href="{{ asset('') }}uploads/content/{{ $content->website_favicon }}">
 
     <!-- All css files are included here. -->
     <!-- Bootstrap fremwork main css -->
@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="{{ asset('') }}assets/web/css/core.css">
     <!-- Theme shortcodes/elements style -->
     <link rel="stylesheet" href="{{ asset('') }}assets/web/css/shortcode/shortcodes.css">
+    <!-- Sweet Alert-->
+    <link href="{{ asset('/assets') }}/admin/libs/sweetalert2/sweetalert2.min.css" rel="stylesheet" type="text/css" />
     <!-- Theme main style -->
     <link rel="stylesheet" href="{{ asset('') }}assets/web/css/style.css">
     <!-- Responsive css -->

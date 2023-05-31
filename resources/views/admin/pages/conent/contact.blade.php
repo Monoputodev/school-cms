@@ -28,7 +28,7 @@
                 <div class="col-xl-12">
                     <div class="card">
                         <div class="card-body">
-                            <form method="POST" action="{{ route('general.update', $content->id) }}"
+                            <form method="POST" action="{{ route('contact.update', $content->id) }}"
                               enctype="multipart/form-data">
                                 @method('PUT')
                                 @csrf

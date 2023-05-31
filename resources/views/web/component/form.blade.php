@@ -35,7 +35,7 @@
                         <input class="form-control2" required="" name="reservation_email" placeholder="Email*" type="email">
                         <input class="form-control2" required="" name="reservation_phone" placeholder="phone*" type="phone">
                         <div class="orderby-wrapper">
-                            <select name="orderby" class="orderby">
+                            <select name="reservation_course" class="orderby">
                                 @foreach ($courses as $course)
                                 <option value="{{ $course->id }}">{{ $course->name }}</option>
 

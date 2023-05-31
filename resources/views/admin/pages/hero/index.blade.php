@@ -45,8 +45,6 @@
                                 <thead>
                                     <tr>
                                         <th>status</th>
-                                        <th>SL</th>
-
                                         <th>Image</th>
                                         <th>Action</th>
                                     </tr>
@@ -62,8 +60,6 @@
                                               class="badge rounded-pill badge-soft-danger font-size-11">Inactive</span>
                                                @endif
                                             </td>
-                                        <td>{{$item->title}}</td>
-                                        <td>{{$item->subtitle}}</td>
 
                                         <td>
                                             @if ($item->image)

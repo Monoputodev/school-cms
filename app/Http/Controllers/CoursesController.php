@@ -34,7 +34,7 @@ class CoursesController extends Controller
             $img = Image::make($image->path());
             $img->fit(380, 310); // resize the image to fit within 380x310 while preserving aspect ratio
             $img->encode('jpg', 80); // convert image to JPEG format with 80% quality and reduce file size to 80kb
-            $img->save(base_path('/uploads/blogs/') . $imageName);
+            $img->save(base_path('/uploads/courses/') . $imageName);
 
             $data['image'] = $imageName;
         }
@@ -67,7 +67,7 @@ class CoursesController extends Controller
             $img = Image::make($image->path());
             $img->fit(380, 310); // resize the image to fit within 380x310 while preserving aspect ratio
             $img->encode('jpg', 80); // convert image to JPEG format with 80% quality and reduce file size to 80kb
-            $img->save(base_path('/uploads/blogs/') . $imageName);
+            $img->save(base_path('/uploads/courses/') . $imageName);
 
             $data['image'] = $imageName;
         }

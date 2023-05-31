@@ -17,7 +17,7 @@ class AdmissionController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
+        $data = $request->validate([
             'reservation_name' => 'required',
             'reservation_email' => 'required|email',
             'reservation_phone' => 'required',
@@ -25,7 +25,7 @@ class AdmissionController extends Controller
             'reservation_message' => 'nullable',
         ]);
 
-        Admission::create($request->all());
+        Admission::create($data);
 
         return back()->with('success', 'Request Submitted successfully.');
     }
