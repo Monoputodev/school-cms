@@ -33,6 +33,9 @@ class ContentSeeder extends Seeder
             'banner_top' => 'top.jpg',
             'banner_hero_status' => '1',
             'banner_top_status' => '1',
+            'facebook' => '#facebook',
+            'linkdin' => '#linkdin',
+            'youtube' => '#youtube',
             'created_at' => '2023-05-24 22:02:48',
             'updated_at' => '2023-05-24 23:09:52',
         ];

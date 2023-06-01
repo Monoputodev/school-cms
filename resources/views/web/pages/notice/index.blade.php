@@ -3,11 +3,11 @@
     <div class="main-body">
 
         <section class="breadcrumbs-area bg-3 ptb-110 bg-opacity bg-relative">
-            <div class="container">
+            <div class="container-md">
                 <div class="row">
                     <div class="col-lg-12 text-center">
                         <div class="breadcrumbs">
-                            <h2 class="page-title">All Announcements</h2>
+                            <h2 class="page-title">সকল নোটিশ</h2>
                         </div>
                     </div>
                 </div>
@@ -17,51 +17,81 @@
 
 
         <div class="upcoming-event-area pt-110 pb-70">
-            <div class="container">
-                <div class="section-title text-center mb-55">
-                    <h1 class="uppercase">All Announcements</h1>
-                    <div class="separator my mtb-15">
-                        <i class="icofont icofont-hat-alt"></i>
-                    </div>
-                </div>
-                <div class="all-upcoming-event">
-                    <div class="row">
 
-                        @foreach ($notices as $notice)
-                            <div class="col-lg-6 col-md-12">
-                                <div class="single-upcoming mb-40">
-                                    <div class="upcoming-date text-center">
-                                        <div class="date-all">
-                                            <span>{{ $notice->created_at->format('d') }}</span>
-                                            <span class="month">{{ $notice->created_at->format('M y') }}</span>
+            <div class="container-md">
+                <div class="col-sm-12 col-12" id="mainpage">
+
+
+                    <div class="col-sm-12 col-12 p-0" data-aos="fade-in" data-aos-duration="2000">
+                        <ul class="list-group p-0">
+                            <li class="list-group-item font-weight-bold bg-success text-light" id="about">
+                                {{ $title }}
+                            </li>
+                            <li class="list-group-item">
+
+                                <div class="table table-responsive">
+                                    <div id="example_wrapper" class="dataTables_wrapper no-footer">
+                                        <table id="example" class="display table-bordered dataTable no-footer"
+                                            style="width:100%" role="grid" aria-describedby="example_info">
+                                            <thead>
+                                                <tr style="font-size: 15px;" role="row">
+                                                    <th class="sorting sorting_asc" tabindex="0" aria-controls="example"
+                                                        rowspan="1" colspan="1" aria-sort="ascending"
+                                                        aria-label="ক্রমিক: activate to sort column descending"
+                                                        style="width: 63.8438px;">ক্রমিক</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="example"
+                                                        rowspan="1" colspan="1"
+                                                        aria-label="তারিখ: activate to sort column ascending"
+                                                        style="width: 83.0312px;">তারিখ</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="example"
+                                                        rowspan="1" colspan="1"
+                                                        aria-label="শিরোনাম: activate to sort column ascending"
+                                                        style="width: 370.328px;">শিরোনাম</th>
+
+                                                    <th class="sorting" tabindex="0" aria-controls="example"
+                                                        rowspan="1" colspan="1"
+                                                        aria-label="ডাউনলোড: activate to sort column ascending"
+                                                        style="width: 97.9375px;">ডাউনলোড</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach ($notices as $notice)
+                                                    <tr style="font-size: 12px;" class="odd">
+                                                        <td class="sorting_1">{{ $loop->iteration }}</td>
+                                                        <td>{{ $notice->created_at->format('d M y') }}</td>
+                                                        <td>{{ $notice->title }}</td>
+
+
+                                                        <td><a href="{{ asset('uploads/notices/'.$notice->pdf_file) }}" class="btn" download="{{ $notice->title }}">
+                                                            <img src="https://www.fenipoly.edu.bd/public/frontend/img/pdf_icon.png" class="img-fluid">
+                                                        </a></td>
+                                                    </tr>
+                                                @endforeach
+
+
+
+                                            </tbody>
+                                        </table>
+                                        <div class="dataTables_info" id="example_info" role="status" aria-live="polite">
+                                            Showing {{ $notices->firstItem() }} to {{ $notices->lastItem() }} of
+                                            {{ $notices->total() }} entries
                                         </div>
+                                        {{ $notices->links('pagination::bootstrap-4') }}
+
                                     </div>
-                                    <div class="single-upcoming-text">
-                                        <div class="blog-meta">
-                                            <span class="published3">
-                                                <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                                {{ $notice->created_at->format('h:i a') }}
-                                            </span>
-                                            <span class="published4">
-                                                <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                                {{ $content->website_name }}
-                                            </span>
-                                        </div>
-                                        <h3><a href="#">{{ $notice->title }}</a></h3>
-                                        <p>{{ $notice->subtitle }}</p>
-                                        @if ($notice->pdf_file)
-                                            <a href="{{ asset('') }}uploads/notices/{{ $notice->pdf_file }}"
-                                                target="_blank" rel="noopener noreferrer" class="btn btn-primary">Download
-                                                file</a>
-                                        @endif
-                                    </div>
+
                                 </div>
-                            </div>
-                        @endforeach
 
+                            </li>
 
+                        </ul>
                     </div>
                 </div>
+
+
+
+
+
             </div>
         </div>
     </div>

@@ -1,5 +1,5 @@
 <div class="lecturers-area ptb-110">
-    <div class="container">
+    <div class="">
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-title text-center mb-60">

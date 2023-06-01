@@ -28,7 +28,7 @@
                     <div class="row">
 
                         @foreach ($notices as $notice)
-                            <div class="col-lg-6 col-md-12">
+                            <div class="col-lg-12 col-md-12">
                                 <div class="single-upcoming mb-40">
                                     <div class="upcoming-date text-center">
                                         <div class="date-all">
@@ -50,8 +50,10 @@
                                         <h3><a href="#">{{ $notice->title }}</a></h3>
                                         <p>{{ $notice->subtitle }}</p>
                                         @if ($notice->pdf_file)
+                                        <object data="{{ asset('') }}uploads/notices/{{ $notice->pdf_file }}" type='application/pdf' width='100%' height='100%'></object>
                                             <a href="{{ asset('') }}uploads/notices/{{ $notice->pdf_file }}"
-                                                target="_blank" rel="noopener noreferrer" class="btn btn-primary">Download
+                                                target="_blank" rel="noopener noreferrer" download="{{ $notice->title
+                                                 }}" class="btn btn-primary">Download
                                                 file</a>
                                         @endif
                                     </div>

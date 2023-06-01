@@ -9,12 +9,12 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                        <h4 class="mb-sm-0 font-size-18">Contact Content</h4>
+                        <h4 class="mb-sm-0 font-size-18">Social Content</h4>
 
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
                                 <li class="breadcrumb-item"><a href="javascript: void(0);">content</a></li>
-                                <li class="breadcrumb-item active">Contact Content</li>
+                                <li class="breadcrumb-item active">Social Content</li>
                             </ol>
                         </div>
 
@@ -28,25 +28,25 @@
                 <div class="col-xl-12">
                     <div class="card">
                         <div class="card-body">
-                            <form method="POST" action="{{ route('contact.update', $content->id) }}"
+                            <form method="POST" action="{{ route('social.update', $content->id) }}"
                               enctype="multipart/form-data">
                                 @method('PUT')
                                 @csrf
                                 <div class="row g-3">
                                     <div class="col-md-6">
-                                        <label for="website_email" class="form-label">Website Email</label>
-                                        <input type="email" class="form-control" id="website_email" name="website_email"
-                                          value="{{ $content->website_email }}" required>
+                                        <label for="facebook" class="form-label">Facebook</label>
+                                        <input type="text" class="form-control" id="facebook" name="facebook"
+                                          value="{{ $content->facebook }}" required>
                                     </div>
                                     <div class="col-md-6">
-                                        <label for="website_phone" class="form-label">Website Phone</label>
-                                        <input type="phone" class="form-control" id="website_phone" name="website_phone"
-                                          value="{{ $content->website_phone }}" required>
+                                        <label for="linkdin" class="form-label">Linkdin</label>
+                                        <input type="text" class="form-control" id="linkdin" name="linkdin"
+                                          value="{{ $content->linkdin }}" required>
                                     </div>
                                     <div class="col-md-6">
-                                        <label for="website_address" class="form-label">Website name</label>
-                                        <textarea type="address" class="form-control" id="website_address"
-                                          name="website_address" required>{{ $content->website_address }}</textarea>
+                                        <label for="youtube" class="form-label">Youtube</label>
+                                        <textarea type="text" class="form-control" id="youtube"
+                                          name="youtube" required>{{ $content->youtube }}</textarea>
                                     </div>
 
 

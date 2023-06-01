@@ -38,8 +38,6 @@
                 <span key="t-notice">Notice</span>
             </a>
             <ul class="sub-menu" aria-expanded="false">
-                <li><a href="{{ route('types.index') }}" key="t-list">All Type</a></li>
-                <li><a href="{{ route('types.create') }}" key="t-create">Add Type</a></li>
                 <li><a href="{{ route('notices.index') }}" key="t-list">All Notice</a></li>
                 <li><a href="{{ route('notices.create') }}" key="t-create">Add Notice</a></li>
             </ul>
@@ -131,6 +129,7 @@
                 <li><a href="{{ route('about.edit', 1) }}" key="t-list">About Us</a></li>
                 <li><a href="{{ route('contact.edit', 1) }}" key="t-list">Contact Info</a></li>
                 <li><a href="{{ route('general.edit', 1) }}" key="t-list">General Setting</a></li>
+                <li><a href="{{ route('social.edit', 1) }}" key="t-list">Social Media Setting</a></li>
                 <li><a href="{{ route('advertisement.edit', 1) }}" key="t-list">Advertisement Setting</a></li>
             </ul>
         </li>

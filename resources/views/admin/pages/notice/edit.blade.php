@@ -34,26 +34,11 @@
                                     @csrf
 
                                     <div class="row g-3">
-                                        <div class="col-md-6">
-                                            <label for="type" class="form-label">Type</label>
-                                            <select class="form-control" id="type" name="type" required>
-                                                <option value=""> ----- ------ </option>
-                                                @foreach ($types as $type)
-                                                    <option @if ($notice->type = $type->id) selected @endif
-                                                        value="{{ $type->id }}"> {{ $type->name }} </option>
-                                                @endforeach
-                                            </select>
-                                        </div>
+
                                         <div class="col-md-6">
                                             <label for="title" class="form-label">Title</label>
                                             <input type="text" class="form-control" id="title" name="title"
                                                 value="{{ $notice->title }}" required>
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <label for="subtitle" class="form-label">Subtitle</label>
-                                            <input type="text" class="form-control" id="subtitle" name="subtitle"
-                                                value="{{ $notice->subtitle }}" required>
                                         </div>
 
                                         <div class="col-md-6">

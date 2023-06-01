@@ -20,7 +20,7 @@ class PublicController extends Controller
     {
         $courses = Courses::all()->take(8);
         $sliders = Hero::all();
-        $notices = Notice::all();
+        $notices = Notice::all()->take(5);
         $blogs = Blog::all()->take(3);
         $teams = Team::all()->take(4);
         $photos = Photo::all()->take(6);
@@ -94,8 +94,9 @@ class PublicController extends Controller
 
     public function allnotice()
     {
-        $notices = Notice::where('status', 1)->orderBy('id', 'DESC')->get();
-        return view('web.pages.notice.index', compact('notices'));
+        $title = "সকল নোটিশ";
+        $notices = Notice::where('status', 1)->orderBy('id', 'DESC')->paginate(10);
+        return view('web.pages.notice.index', compact('notices','title'));
     }
     public function notice($type)
     {
@@ -103,5 +104,35 @@ class PublicController extends Controller
         $notices = Notice::where('type',$type)->get();
         // dd($notice);
         return view('web.pages.notice.details', compact('notices','cat'));
+    }
+
+    public function allresult()
+    {
+        $results = Result::where('status',1)->orderBy('id', 'DESC')->paginate(10);
+        $title = "চলমান ফলাফল";
+        return view('web.pages.notice.result',compact('results','title'));
+    }
+    public function result($id)
+    {
+        $courseName = Courses::find($id)->name;
+        $results = Result::where('status',1)->orderBy('id', 'DESC')->where('course_id',$id)->paginate(10);
+        $title = $courseName;
+        return view('web.pages.notice.result',compact('results','title'));
+    }
+
+
+    public function allrutine()
+    {
+        $rutines = Rutine::where('status',1)->orderBy('id', 'DESC')->paginate(10);
+        $title = "ক্লাস রুটিন";
+        return view('web.pages.notice.rutine',compact('rutines','title'));
+    }
+    public function rutine($id)
+    {
+
+        $courseName = Courses::find($id)->name;
+        $rutines = Rutine::where('status',1)->orderBy('id', 'DESC')->where('course_id',$id)->paginate(10);
+        $title =  $courseName;
+        return view('web.pages.notice.rutine',compact('rutines','title'));
     }
 }

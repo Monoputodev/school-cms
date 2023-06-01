@@ -1,10 +1,8 @@
         <!-- start courses area -->
         <div class="upcoming-event-area pt-110 pb-80">
-            <div class="container">
+            <div class="">
                 <div class="section-title text-center mb-55">
                     <h1 class="uppercase">OUR GALLERY</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do <br> eiumod tempor incididunt ut
-                        labore et. </p>
                     <div class="separator my mtb-15">
                         <i class="icofont icofont-hat-alt"></i>
                     </div>

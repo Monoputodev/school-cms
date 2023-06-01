@@ -29,6 +29,9 @@ class CreateContentTable extends Migration
             $table->string('website_address');
             $table->longText('about_content');
             $table->string('about_image');
+            $table->string('facebook');
+            $table->string('linkdin');
+            $table->string('youtube');
 
             $table->timestamps();
         });

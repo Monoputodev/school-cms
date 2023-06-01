@@ -81,7 +81,27 @@ class ContentController extends Controller
     {
         dd($content);
     }
+    public function editSocial(Content $content)
+    {
+        return view('admin.pages.conent.social', compact('content'));
+    }
+    public function updateSocial(Request $request, Content $content)
+    {
 
+        $validatedData = $request->validate([
+            'facebook' => 'required',
+            'linkdin' => 'required',
+            'youtube' => 'required',
+        ]);
+
+        $content->facebook = $validatedData['facebook'];
+        $content->linkdin = $validatedData['linkdin'];
+        $content->youtube = $validatedData['youtube'];
+
+        $content->save();
+
+        return back()->with('success', 'Social Content updated successfully.');
+    }
     public function editContact(Content $content)
     {
         return view('admin.pages.conent.contact', compact('content'));
@@ -101,7 +121,7 @@ class ContentController extends Controller
 
         $content->save();
 
-        return back()->with('success', 'About Content updated successfully.');
+        return back()->with('success', 'Contact Content updated successfully.');
     }
 
     public function editAbout(Content $content)

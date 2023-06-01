@@ -43,9 +43,7 @@ class NoticeController extends Controller
     {
         $data = $request->validate([
             'title' => 'required',
-            'subtitle' => 'nullable',
-            'type' => 'nullable',
-            'pdf_file' => 'required|file|',
+            'pdf_file' => 'required|file',
         ]);
 
         $pdf_file = $request->file('pdf_file');
@@ -100,9 +98,7 @@ class NoticeController extends Controller
     {
         $data = $request->validate([
             'title' => 'required',
-            'subtitle' => 'nullable',
-            'type' => 'nullable',
-            // 'subtitle' => 'required',
+
         ]);
 
         if ($request->hasFile('pdf_file')) {

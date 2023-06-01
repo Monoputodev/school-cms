@@ -25,14 +25,19 @@ class ResultController extends Controller
     public function store(Request $request)
     {
         // Validate the input data
-        $request->validate([
+        $data = $request->validate([
             'title' => 'required',
             'file' => 'required|file',
             'course_id' => 'required',
         ]);
+        $file = $request->file('file');
+        $file_name = $file->getClientOriginalName();
+        $file->move(base_path('/uploads/files'), $file_name);
+
+        $data['file'] = $file_name;
 
         // Store the result in the database
-        Result::create($request->all());
+        Result::create($data);
 
         // Redirect back to the index page or a specific route
         return redirect()->route('results.index')->with('success', 'Result created successfully.');
@@ -47,14 +52,19 @@ class ResultController extends Controller
     public function update(Request $request, Result $result)
     {
         // Validate the input data
-        $request->validate([
+        $data = $request->validate([
             'title' => 'required',
-            'file' => 'file',
             'course_id' => 'required',
         ]);
+        if ($request->hasFile('file')) {
+            $file = $request->file('file');
+            $file_name = $file->getClientOriginalName();
+            $file_path = $file->save(base_path('/uploads/files'), $file_name);
+            $data['file'] = $file_path;
+        }
 
         // Update the result in the database
-        $result->update($request->all());
+        $result->update($data);
 
         // Redirect back to the index page or a specific route
         return redirect()->route('results.index')->with('success', 'Result updated successfully.');

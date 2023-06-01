@@ -7,7 +7,7 @@
                 <div class="row">
                     <div class="col-lg-12 text-center">
                         <div class="breadcrumbs">
-                            <h2 class="page-title">চলমান ফলাফল</h2>
+                            <h2 class="page-title">ক্লাস রুটিন</h2>
                         </div>
                     </div>
                 </div>
@@ -59,17 +59,17 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach ($results as $result)
+                                                @foreach ($rutines as $rutine)
                                                     <tr style="font-size: 12px;" class="odd">
                                                         <td class="sorting_1">{{ $loop->iteration }}</td>
-                                                        <td>{{ $result->created_at->format('d M y') }}</td>
-                                                        <td>{{ $result->title }}</td>
-                                                        <td>{{ $result->course->name }}</td>
+                                                        <td>{{ $rutine->created_at->format('d M y') }}</td>
+                                                        <td>{{ $rutine->title }}</td>
+                                                        <td>{{ $rutine->course->name }}</td>
 
 
-                                                        <td><a href="{{ asset('/') }}uploads/files/{{ $result->file }}"
-                                                                class="btn btn-sm btn-danger"
-                                                                download="{{ $result->title }}"><img
+                                                        <td><a href="{{ asset('/') }}uploads/files/{{ $rutine->file }}"
+                                                                class=""
+                                                                download="{{ $rutine->title }}"><img
                                                                     src="https://www.fenipoly.edu.bd/public/frontend/img/pdf_icon.png"
                                                                     class="img-fluid"></a></td>
                                                     </tr>
@@ -80,10 +80,10 @@
                                             </tbody>
                                         </table>
                                         <div class="dataTables_info" id="example_info" role="status" aria-live="polite">
-                                            Showing {{ $results->firstItem() }} to {{ $results->lastItem() }} of
-                                            {{ $results->total() }} entries
+                                            Showing {{ $rutines->firstItem() }} to {{ $rutines->lastItem() }} of
+                                            {{ $rutines->total() }} entries
                                         </div>
-                                        {{ $results->links('pagination::bootstrap-4') }}
+                                        {{ $rutines->links('pagination::bootstrap-4') }}
                                     </div>
 
                                 </div>

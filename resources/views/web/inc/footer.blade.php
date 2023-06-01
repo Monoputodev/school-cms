@@ -24,6 +24,13 @@
 
                                     </li>
                                 </ul>
+                                <div class="footer-text footer-social social-2">
+                                <ul class="social">
+                                    <li><a href="{{ $content->facebook }}"><i class="zmdi zmdi-facebook"></i></a></li>
+                                    <li><a href="{{ $content->linkdin }}"><i class="zmdi zmdi-linkedin"></i></a></li>
+                                    <li><a href="{{ $content->youtube }}"><i class="zmdi zmdi-youtube"></i></a></li>
+                                </ul>
+                                </div>
                             </div>
                         </div>
                         <div class="col-lg-8 col-md-6">

@@ -256,13 +256,13 @@ NOTE: This is Header style file. All Header related style included in this file.
 
   .header-bottom.stick-h2.stick {
       animation: 300ms ease-in-out 0s normal none 1 running fadeInDown;
-      background: #fff none repeat scroll 0 0;
+      /* background: #fff none repeat scroll 0 0; */
       position: fixed;
       top: 0;
       z-index: 999999;
       width: 100%;
       left: 0;
-      box-shadow: 0 1px 3px rgba(50, 50, 50, 0.4);
+      /* box-shadow: 0 1px 3px rgba(50, 50, 50, 0.4); */
   }
   .header-seven.stick-h2.stick {
       animation: 300ms ease-in-out 0s normal none 1 running fadeInDown;
@@ -493,3 +493,6 @@ NOTE: This is Header style file. All Header related style included in this file.
     position: inherit;
     z-index: inherit;
   }
+  .stick .container.bg-white.g-0 {
+    box-shadow: 0 1px 3px rgba(50, 50, 50, 0.4);
+}

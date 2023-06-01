@@ -14,10 +14,12 @@
         @include('web.inc.mobile-menu')
         <!-- mobile-menu-area end -->
         <!-- End of header area -->
-
+<div class="container-md bg-white">
         <!-- start page content -->
         @yield('main-body')
         <!-- End page content -->
+</div>
+
 
         @include('web.inc.footer')
         <!-- start scrollUp

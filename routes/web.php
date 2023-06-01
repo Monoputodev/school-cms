@@ -50,7 +50,14 @@ Route::prefix('notice')->group(function () {
     Route::get('/', [PublicController::class, 'allNotice'])->name('notice.index');
     Route::get('/details/{notice}', [PublicController::class, 'notice'])->name('notice.details');
 });
-
+Route::prefix('result')->group(function () {
+    Route::get('/', [PublicController::class, 'allresult'])->name('result.index');
+    Route::get('/{id}', [PublicController::class, 'result'])->name('result.course');
+});
+Route::prefix('rutine')->group(function () {
+    Route::get('/', [PublicController::class, 'allrutine'])->name('rutine.index');
+    Route::get('/{id}', [PublicController::class, 'rutine'])->name('rutine.course');
+});
 Route::prefix('admissions')->group(function () {
     // Hero-Routes
 
@@ -202,6 +209,8 @@ Route::prefix('/dashboard')->middleware('auth')->group(function () {
         Route::put('/general/{content}', [ContentController::class, 'updateGeneral'])->name('general.update');
         Route::get('/contact/{content}/edit', [ContentController::class, 'editContact'])->name('contact.edit');
         Route::put('/contact/{content}', [ContentController::class, 'updateContact'])->name('contact.update');
+        Route::get('/social/{content}/edit', [ContentController::class, 'editSocial'])->name('social.edit');
+        Route::put('/social/{content}', [ContentController::class, 'updateSocial'])->name('social.update');
     });
 });
 

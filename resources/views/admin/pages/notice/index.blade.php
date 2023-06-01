@@ -48,9 +48,7 @@
                                     <thead>
                                         <tr>
                                             <th>status</th>
-                                            <th>Type</th>
                                             <th>Title</th>
-                                            <th>Subtitle</th>
                                             <th>PDF FILE</th>
                                             <th>Action</th>
                                         </tr>
@@ -67,14 +65,8 @@
                                                             class="badge rounded-pill badge-soft-danger font-size-11">Inactive</span>
                                                     @endif
                                                 </td>
-                                                <td>
 
-                                                        <span
-                                                            class="badge rounded-pill badge-soft-info font-size-11">{{ $notice->types->name }}</span>
-
-                                                </td>
                                                 <td>{{ $notice->title }}</td>
-                                                <td>{!! $notice->subtitle !!}</td>
                                                 <td>
                                                     @if ($notice->pdf_file)
                                                     <a target="_blank" href="{{ asset('uploads/notices/' . $notice->pdf_file) }}">View PDF</a>

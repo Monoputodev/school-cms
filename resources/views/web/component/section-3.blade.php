@@ -1,6 +1,6 @@
-<section class="top-courses pt-110 pb-80">
-    <div class="container">
-        <div class="section-title text-center mb-55">
+<section class="top-courses pt-110 pb-80 bg-white">
+    <div class="">
+        <div class="section-title text-center mb-55 ">
             <h1 class="uppercase">OUR Courses</h1>
             <div class="separator my mtb-15">
                 <i class="icofont icofont-hat-alt"></i>

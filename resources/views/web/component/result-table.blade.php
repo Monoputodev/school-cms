@@ -10,7 +10,7 @@
     <tbody>
         @foreach ($results as $result)
         <tr>
-            <td>{{ $result->created_at->format('dmy') }}</td>
+            <td>{{ $result->created_at->format('d-m-y') }}</td>
             <td>{{ $result->title }}</td>
             <td><button class="btn btn-primary btn-sm">Download</button></td>
           </tr>
@@ -19,6 +19,3 @@
 
     </tbody>
   </table>
-
-</div>
-

@@ -1,5 +1,5 @@
-      <div class="container-md g-0">
-          <div class="row">
+      <div class="">
+          <div class="row ">
 
               <div
                   class="
